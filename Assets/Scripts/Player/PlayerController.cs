@@ -11,19 +11,21 @@ public class PlayerController : ShootingEntity {
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
+    private float inputX = 0;
+    private float inputY = 0;
+
     protected override void EntityStart() {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update() {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+    private void FixedUpdate() {
+        this.inputX = Input.GetAxis("Horizontal");
+        this.inputY = Input.GetAxis("Vertical");
 
-        this.rb.AddForce(new Vector2(x * this.playerSpeed, y * this.playerSpeed));
-        if (x != 0 || y != 0) {
+        this.rb.AddForce(new Vector2(this.inputX * this.playerSpeed, this.inputY * this.playerSpeed));
+        if (this.inputX != 0 || this.inputY != 0) {
             //TODO: Add move sound
-            UpdatePlayerSprite(x, y);
         }
 
         if (Input.GetMouseButtonDown(0)) {
@@ -34,20 +36,22 @@ public class PlayerController : ShootingEntity {
         }
     }
 
-    private void UpdatePlayerSprite(float x, float y) {
+    private void Update() {
+        this.UpdatePlayerSprite();
+    }
+
+    private void UpdatePlayerSprite() {
         //Horizontal flip
         Vector3 localScale = this.transform.localScale;
-        if (x > 0) {
+        if (this.inputX > 0) {
             localScale.x = 1;
-        } else if (x < 0) {
+        } else if (this.inputX < 0) {
             localScale.x = -1;
         }
         this.transform.localScale = localScale;
 
-        //TODO: FIX
-        Vector3 lookDir = Vector3.zero;
-        lookDir.y = this.rb.velocity.normalized.y;
-        this.spotLight.transform.rotation.SetFromToRotation(Vector3.zero, lookDir);
+        float upDown = this.rb.velocity.y * (5 * localScale.x);
+        this.spotLight.transform.rotation = Quaternion.Euler(0, 0, upDown - (90 * localScale.x));
     }
 
     private void Hit() {
