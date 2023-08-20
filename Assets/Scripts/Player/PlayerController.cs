@@ -2,13 +2,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : ShootingEntity {
+    [Header("Player")]
     public float playerSpeed;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
     private void Start() {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
