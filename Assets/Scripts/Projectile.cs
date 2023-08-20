@@ -25,14 +25,10 @@ public class Projectile : MonoBehaviour {
                     Destroy(this.gameObject);
                 }
             }
-
         }
 
         if (this.transform.position.x == pos.x && this.transform.position.y == this.pos.y) {
             Destroy(this.gameObject);
-
         }
     }
-
-
 }

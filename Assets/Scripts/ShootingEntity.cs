@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.TestTools;
 
-public class ShootingEntity : Entity {
+public abstract class ShootingEntity : Entity {
     [Header("Shooter")]
     public Projectile projectilePrefab;
     public float shootDelay;
@@ -10,12 +9,21 @@ public class ShootingEntity : Entity {
     public float shootRange;
     public Transform firePoint;
     public int damage;
-    public bool ready = true;
+
+    private bool ready = true;
 
     public void Shoot(Vector2 targetPos) {
+        if (!this.ready) { //Just for redundency
+            return;
+        }
+
         Projectile projectile = Instantiate(this.projectilePrefab.gameObject, this.firePoint.position, Quaternion.identity).GetComponent<Projectile>();
         projectile.Init(targetPos, this.projectileSpeed, this.damage);
         StartCoroutine(this.Reload());
+    }
+
+    public bool isReadyToShoot() {
+        return this.ready;
     }
 
     private IEnumerator Reload() {
@@ -23,6 +31,7 @@ public class ShootingEntity : Entity {
         yield return new WaitForSeconds(this.shootDelay);
         this.ready = true;
     }
+
     public void OnDrawGizmos() {
         Gizmos.DrawWireSphere(transform.position, shootRange);
     }

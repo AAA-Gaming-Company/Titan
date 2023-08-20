@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: e6a8ad3a22d1c42448bbd520e47db111
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pinkfish-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1069
+        width: 113
+        height: 50
+      alignment: 9
+      pivot: {x: 0.65511787, y: 0.30658692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0cffdd8279e54feb817bea53fb7a522
+      internalID: 1730672857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 1065
+        width: 114
+        height: 45
+      alignment: 9
+      pivot: {x: 0.664361, y: 0.31195748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874b56cd02b254c8c87467473e2eb56e
+      internalID: 77357223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1067
+        width: 116
+        height: 42
+      alignment: 9
+      pivot: {x: 0.66673803, y: 0.34169805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7743a647d8b45c08b68ac16ea0a25e
+      internalID: -1274239945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1062
+        width: 116
+        height: 40
+      alignment: 9
+      pivot: {x: 0.6823704, y: 0.36400452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee5d219e017f4291b91bfee81b313c7
+      internalID: -1923860381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1060
+        width: 119
+        height: 31
+      alignment: 9
+      pivot: {x: 0.69300956, y: 0.46100837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eaf6304c158b4377886556077ed48cd
+      internalID: -121878001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1060
+        width: 119
+        height: 31
+      alignment: 9
+      pivot: {x: 0.69300956, y: 0.48050418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4debf9675c2fc4ad4834744141be4d48
+      internalID: -779515679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1065
+        width: 119
+        height: 30
+      alignment: 9
+      pivot: {x: 0.6879308, y: 0.45970458}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a7df877b9924f379126f64bae3a8c5
+      internalID: -1781142744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1067
+        width: 120
+        height: 30
+      alignment: 9
+      pivot: {x: 0.6914012, y: 0.45970866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d7c755390a648e39c769638eb1cd38
+      internalID: -1099542350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1067
+        width: 119
+        height: 33
+      alignment: 9
+      pivot: {x: 0.6980883, y: 0.5366322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1dc8a73205594ada8ababc09673a058
+      internalID: 1612416955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1067
+        width: 117
+        height: 30
+      alignment: 9
+      pivot: {x: 0.68597776, y: 0.45970866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1bf52e6d2cc4e8f9e7f5658a50e989
+      internalID: -305865299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 1069
+        width: 117
+        height: 31
+      alignment: 9
+      pivot: {x: 0.68597674, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39ed01e4a7d147dc8621e06833dcdec
+      internalID: 327854403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 941
+        width: 117
+        height: 30
+      alignment: 9
+      pivot: {x: 0.69232804, y: 0.47793782}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e0d3d0d3da94aa384019d8c10a7406
+      internalID: 879045069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 934
+        width: 119
+        height: 31
+      alignment: 9
+      pivot: {x: 0.6890954, y: 0.52134854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5f58371ac2846e2910f3784ae35ea3
+      internalID: -2101036845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 929
+        width: 118
+        height: 36
+      alignment: 9
+      pivot: {x: 0.6850891, y: 0.40807596}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56d3f44a7d084ad395355b6cd1370c0
+      internalID: 2031423925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pinkfish-sheet_16
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 931
+        width: 118
+        height: 42
+      alignment: 9
+      pivot: {x: 0.6913742, y: 0.35355777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbabfa1056924fd6a5d374d808e6fb2
+      internalID: -2112532636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pinkfish-sheet_0: 748151954
+      pinkfish-sheet_1: 1730672857
+      pinkfish-sheet_10: 1612416955
+      pinkfish-sheet_11: -305865299
+      pinkfish-sheet_12: 327854403
+      pinkfish-sheet_13: 879045069
+      pinkfish-sheet_14: -2101036845
+      pinkfish-sheet_15: 2031423925
+      pinkfish-sheet_16: -2112532636
+      pinkfish-sheet_2: 77357223
+      pinkfish-sheet_3: 1133936705
+      pinkfish-sheet_4: -1274239945
+      pinkfish-sheet_5: -1923860381
+      pinkfish-sheet_6: -121878001
+      pinkfish-sheet_7: -779515679
+      pinkfish-sheet_8: -1781142744
+      pinkfish-sheet_9: -1099542350
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Entity : MonoBehaviour {
+public abstract class Entity : MonoBehaviour {
     [Header("Entity")]
     public int maxHP;
 
@@ -8,7 +8,10 @@ public class Entity : MonoBehaviour {
 
     protected void Start() {
         this.currentHP = this.maxHP;
+        this.EntityStart();
     }
+
+    protected abstract void EntityStart();
 
     public void TakeDamage(int amount) {
         this.currentHP -= amount;
