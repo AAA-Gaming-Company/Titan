@@ -14,9 +14,12 @@ public class PlayerController : ShootingEntity {
     private float inputX = 0;
     private float inputY = 0;
 
+    private Camera cam;
+
     protected override void EntityStart() {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        cam = Camera.main;
     }
 
     private void FixedUpdate() {
@@ -28,7 +31,7 @@ public class PlayerController : ShootingEntity {
             //TODO: Add move sound
         }
 
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButton(0)) {
             this.Hit();
 
             //Probably should also rotate the player if they click in a
@@ -55,6 +58,6 @@ public class PlayerController : ShootingEntity {
     }
 
     private void Hit() {
-        //TODO: Add gunz
+        Shoot(cam.ScreenToWorldPoint(Input.mousePosition));
     }
 }
