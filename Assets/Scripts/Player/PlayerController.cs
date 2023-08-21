@@ -9,13 +9,7 @@ public class PlayerController : ShootingEntity {
     [Header("Player")]
     public float playerSpeed;
     public GameObject spotLight;
-    public MMF_Player moveStart;
-    public MMF_Player moveStartAudio;
     public MMF_Player move;
-    public MMF_Player moveEnd;
-    public MMF_Player moveEndAudio;
-
-    private bool audioReady = true;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -44,24 +38,12 @@ public class PlayerController : ShootingEntity {
             if (previousInputX * 2 + previousInputY == 0)
             {
                 move.PlayFeedbacks();
-                moveStart.PlayFeedbacks();
-                if (audioReady)
-                {
-                    moveStartAudio.PlayFeedbacks();
-                    StartCoroutine(AudioDelay());
-                }
             }
         }else if (inputX * 2 + inputY == 0)
         {
             if (previousInputX * 2 != 0 || previousInputY != 0)
             {
                 move.StopFeedbacks();
-                moveEnd.PlayFeedbacks();
-                if (audioReady)
-                {
-                    moveEndAudio.PlayFeedbacks();
-                    StartCoroutine(AudioDelay());
-                }
             }
 
         }
@@ -100,10 +82,4 @@ public class PlayerController : ShootingEntity {
         this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
     }
 
-    private IEnumerator AudioDelay()
-    {
-        audioReady = false;
-        yield return new WaitForSeconds(4);
-        audioReady = true;
-    }
 }
