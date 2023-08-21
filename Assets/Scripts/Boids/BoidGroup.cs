@@ -2,14 +2,77 @@ using UnityEngine;
 
 public class BoidGroup : MonoBehaviour {
     public int flockSize = 10;
-    public Boid boidPrefab;
+    public GameObject boidPrefab;
+    public Sprite[] spritePool;
+    public Transform target;
+
     public BoidSettings settings;
+    public ComputeShader compute;
+
+    private Boid[] boids;
 
     private void Start() {
+        this.boids = new Boid[this.flockSize];
+
         //Spawn in all of the boids
         for (int i = 0; i < this.flockSize; i++) {
-            Boid boid = Instantiate(this.boidPrefab.gameObject, base.transform.position, Quaternion.identity).GetComponent<Boid>();
+            Boid boid = Instantiate(this.boidPrefab, base.transform.position, Quaternion.identity).GetComponent<Boid>();
 
+            this.boids[i] = boid;
+            boid.transform.parent = this.transform;
+
+            Sprite boidSprite = this.spritePool[Random.Range(0, this.spritePool.Length - 1)];
+            boid.Init(this.settings, boidSprite, this.target);
+        }
+    }
+
+    private void Update() {
+        int numBoids = this.boids.Length;
+        BoidData[] boidData = new BoidData[numBoids];
+
+        for (int i = 0; i < numBoids; i++) {
+            boidData[i].position = this.boids[i].position;
+            boidData[i].direction = this.boids[i].right;
+        }
+
+        ComputeBuffer boidBuffer = new ComputeBuffer(numBoids, BoidData.Size);
+        boidBuffer.SetData(boidData);
+
+        this.compute.SetBuffer(0, "boids", boidBuffer);
+        this.compute.SetInt("numBoids", this.boids.Length);
+        this.compute.SetFloat("viewRadius", this.settings.perceptionRadius);
+        this.compute.SetFloat("avoidRadius", this.settings.avoidanceRadius);
+
+        int threadGroups = Mathf.CeilToInt(numBoids / 1024f);
+        this.compute.Dispatch(0, threadGroups, 1, 1);
+
+        boidBuffer.GetData(boidData);
+
+        for (int i = 0; i < numBoids; i++) {
+            this.boids[i].avgFlockHeading = boidData[i].flockHeading;
+            this.boids[i].centreOfFlockmates = boidData[i].flockCentre;
+            this.boids[i].avgAvoidanceHeading = boidData[i].avoidanceHeading;
+            this.boids[i].numPerceivedFlockmates = boidData[i].numFlockmates;
+
+            this.boids[i].UpdateBoid();
+        }
+
+        boidBuffer.Release();
+    }
+
+    public struct BoidData {
+        public Vector2 position;
+        public Vector2 direction;
+
+        public Vector2 flockHeading;
+        public Vector2 flockCentre;
+        public Vector2 avoidanceHeading;
+        public int numFlockmates;
+
+        public static int Size {
+            get {
+                return sizeof(float) * 2 * 5 + sizeof(int);
+            }
         }
     }
 }
