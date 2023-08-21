@@ -8,9 +8,11 @@ public class Projectile : MonoBehaviour {
     public bool player;
 
     public void Init(Vector2 targetPos, float range, float speed, int damage) {
-        //Normalize the target position to extract only the direction, then
-        // multiply by the bullet's range for the distance. Finally, add the
-        // start position so that it doesn't try going to points around (0, 0).
+        //Get the direction this bullet should go by getting the difference
+        // between the start and end position. Then we normalize it to give it
+        // a max amplitude of 1 which we then multiply by the range to get the
+        // final position around (0, 0). This direction can be adapted to work
+        // for us by adding the start position.
         Vector2 startPos = new Vector2(base.transform.position.x, base.transform.position.y);
         Vector2 direction = targetPos - startPos;
         this.finalPosition = (direction.normalized * range) + startPos;
