@@ -32,7 +32,7 @@ public abstract class ShootingEntity : Entity {
         this.ready = true;
     }
 
-    public void OnDrawGizmos() {
+    protected void OnDrawGizmos() {
         Gizmos.DrawWireSphere(transform.position, shootRange);
     }
 }

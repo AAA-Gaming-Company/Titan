@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour {
         this.damageDealt = damage;
     }
 
-    public void FixedUpdate() {
+    private void FixedUpdate() {
         //Move the projectile
         if (player) {
             base.transform.position = Vector3.MoveTowards(base.transform.position, this.finalPosition, this.maxSpeed);
