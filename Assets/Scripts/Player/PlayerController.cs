@@ -43,11 +43,15 @@ public class PlayerController : ShootingEntity {
         this.UpdatePlayerSprite();
 
         if (this.rb.velocity.x != 0 || this.rb.velocity.y != 0) {
-            this.move.PlayFeedbacks();
-            this.isPlayingSound = true;
-        } else if (this.isPlayingSound) {
-            this.move.StopFeedbacks();
-            this.isPlayingSound = false;
+            if (!this.isPlayingSound) {
+                this.move.PlayFeedbacks();
+                this.isPlayingSound = true;
+            }
+        } else {
+            if (this.isPlayingSound) {
+                this.move.StopFeedbacks();
+                this.isPlayingSound = false;
+            }
         }
     }
 
