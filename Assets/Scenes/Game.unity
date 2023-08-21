@@ -5544,7 +5544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 900000
   projectilePrefab: {fileID: 3469701995047313161, guid: 47cd6c965d854e647bd2c519f8efaea5, type: 3}
-  shootDelay: 0.2
+  shootDelay: 0.4
   projectileSpeed: 0.25
   shootRange: 8
   firePoint: {fileID: 964659777}
@@ -7305,9 +7305,9 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 3280746367086231563
-  - rid: 3280746367086231566
-  - rid: 3280746367086231570
+  - rid: 3280746367086231571
+  - rid: 3280746367086231572
+  - rid: 3280746367086231573
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   StopFeedbacksOnDisable: 0
@@ -7315,11 +7315,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3280746367086231563
+    - rid: 3280746367086231571
       type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
       data:
         Active: 1
-        UniqueID: -1716650263
+        UniqueID: -1641795367
         Label: Sound
         ChannelMode: 0
         Channel: 0
@@ -7433,11 +7433,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 3280746367086231566
+    - rid: 3280746367086231572
       type: {class: MMF_Property, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
       data:
         Active: 1
-        UniqueID: -1083055590
+        UniqueID: 1111732110
         Label: Property
         ChannelMode: 0
         Channel: 0
@@ -7533,7 +7533,7 @@ MonoBehaviour:
           ColorRemapOne: {r: 0, g: 0, b: 0, a: 1}
           Level: 0
         Mode: 0
-        Duration: 0.2
+        Duration: 0.17
         StartsOff: 0
         RelativeValues: 1
         AllowAdditivePlays: 0
@@ -7554,8 +7554,17 @@ MonoBehaviour:
               inWeight: 0
               outWeight: 0
             - serializedVersion: 3
-              time: 0.3
-              value: 1
+              time: 0.07338159
+              value: 0.8073073
+              inSlope: 2.949232
+              outSlope: 2.949232
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.50718385
+              value: 1.0047112
               inSlope: 0
               outSlope: 0
               tangentMode: 0
@@ -7579,11 +7588,11 @@ MonoBehaviour:
         RemapLevelOne: 1
         InstantLevel: 0
         ToDestinationLevel: 5
-    - rid: 3280746367086231570
+    - rid: 3280746367086231573
       type: {class: MMF_CinemachineImpulse, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.Cinemachine}
       data:
         Active: 1
-        UniqueID: 718471898
+        UniqueID: -432369544
         Label: Cinemachine Impulse
         ChannelMode: 0
         Channel: 0
