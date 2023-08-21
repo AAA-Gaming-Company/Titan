@@ -26,6 +26,7 @@ public class Boid : MonoBehaviour {
     public void Init(BoidSettings settings, BoidSkin skin, Transform target) {
         this.settings = settings;
         this.target = target;
+
         this.GetComponent<Animator>().runtimeAnimatorController = skin.skin;
         this.GetComponent<BoxCollider2D>().size = skin.colliderWidthHeight;
         this.GetComponent<BoxCollider2D>().offset = skin.colliderOffset;

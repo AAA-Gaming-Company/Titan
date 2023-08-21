@@ -14,7 +14,7 @@ public class BoidGroup : MonoBehaviour {
     private void Start() {
         this.boids = new Boid[this.flockSize];
 
-        float spreadFactor = Mathf.Sqrt(this.flockSize);
+        float spreadFactor = this.flockSize * 0.2f;
 
         //Spawn in all of the boids
         for (int i = 0; i < this.flockSize; i++) {
