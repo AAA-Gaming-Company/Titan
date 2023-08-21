@@ -14,14 +14,20 @@ public class BoidGroup : MonoBehaviour {
     private void Start() {
         this.boids = new Boid[this.flockSize];
 
+        float spreadFactor = Mathf.Sqrt(this.flockSize);
+
         //Spawn in all of the boids
         for (int i = 0; i < this.flockSize; i++) {
-            Boid boid = Instantiate(this.boidPrefab, base.transform.position, Quaternion.identity).GetComponent<Boid>();
+            Vector3 spawnPos = base.transform.position;
+            spawnPos.x += Random.Range(-spreadFactor, spreadFactor);
+            spawnPos.y += Random.Range(-spreadFactor, spreadFactor);
+
+            Boid boid = Instantiate(this.boidPrefab, spawnPos, Quaternion.identity).GetComponent<Boid>();
 
             this.boids[i] = boid;
             boid.transform.parent = this.transform;
 
-            Sprite boidSprite = this.spritePool[Random.Range(0, this.spritePool.Length - 1)];
+            Sprite boidSprite = this.spritePool[Random.Range(0, this.spritePool.Length)];
             boid.Init(this.settings, boidSprite, this.target);
         }
     }

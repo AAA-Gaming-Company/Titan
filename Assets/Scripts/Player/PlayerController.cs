@@ -16,10 +16,7 @@ public class PlayerController : ShootingEntity {
 
     private float inputX = 0;
     private float inputY = 0;
-
-    private float previousInputX = 0;
-    private float previousInputY = 0;
-
+    private bool isPlayingSound = false;
     private Camera cam;
 
     protected override void EntityStart() {
@@ -33,23 +30,6 @@ public class PlayerController : ShootingEntity {
         this.inputY = Input.GetAxis("Vertical");
 
         this.rb.AddForce(new Vector2(this.inputX * this.playerSpeed, this.inputY * this.playerSpeed));
-        if (this.inputX != 0 || this.inputY != 0)
-        {
-            if (previousInputX * 2 + previousInputY == 0)
-            {
-                move.PlayFeedbacks();
-            }
-        }else if (inputX * 2 + inputY == 0)
-        {
-            if (previousInputX * 2 != 0 || previousInputY != 0)
-            {
-                move.StopFeedbacks();
-            }
-
-        }
-
-        this.previousInputX = inputX;
-        this.previousInputY = inputY;
 
         if (Input.GetMouseButton(0)) {
             this.Hit();
@@ -61,6 +41,14 @@ public class PlayerController : ShootingEntity {
 
     private void Update() {
         this.UpdatePlayerSprite();
+
+        if (this.rb.velocity.x != 0 || this.rb.velocity.y != 0) {
+            this.move.PlayFeedbacks();
+            this.isPlayingSound = true;
+        } else if (this.isPlayingSound) {
+            this.move.StopFeedbacks();
+            this.isPlayingSound = false;
+        }
     }
 
     private void UpdatePlayerSprite() {
