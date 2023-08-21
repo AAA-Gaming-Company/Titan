@@ -17,9 +17,9 @@ public class PlayerController : ShootingEntity {
     private Camera cam;
 
     protected override void EntityStart() {
-        rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        cam = Camera.main;
+        this.rb = GetComponent<Rigidbody2D>();
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        this.cam = Camera.main;
     }
 
     private void FixedUpdate() {
@@ -45,7 +45,7 @@ public class PlayerController : ShootingEntity {
 
     private void UpdatePlayerSprite() {
         //Horizontal flip
-        Vector3 localScale = this.transform.localScale;
+        Vector3 localScale = base.transform.localScale;
         if (this.inputX > 0) {
             localScale.x = 1;
         } else if (this.inputX < 0) {
@@ -53,11 +53,12 @@ public class PlayerController : ShootingEntity {
         }
         this.transform.localScale = localScale;
 
+        //Move the spot light slightly up or down when going in that direction
         float upDown = this.rb.velocity.y * (5 * localScale.x);
         this.spotLight.transform.rotation = Quaternion.Euler(0, 0, upDown - (90 * localScale.x));
     }
 
     private void Hit() {
-        Shoot(cam.ScreenToWorldPoint(Input.mousePosition));
+        this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
     }
 }

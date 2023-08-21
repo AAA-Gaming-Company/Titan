@@ -21,6 +21,7 @@ public abstract class Entity : MonoBehaviour {
     }
 
     public void Die() {
+        Debug.Log("Oops, I died");
         Destroy(this.gameObject);
     }
 }

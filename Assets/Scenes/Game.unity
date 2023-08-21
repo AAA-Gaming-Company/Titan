@@ -442,7 +442,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3469701995047313161, guid: 47cd6c965d854e647bd2c519f8efaea5, type: 3}
   shootDelay: 0.2
   projectileSpeed: 0.25
-  shootRange: 0
+  shootRange: 8
   firePoint: {fileID: 964659777}
   damage: 15
   playerSpeed: 10
@@ -1072,7 +1072,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632218068}
-  m_LocalRotation: {x: -0, y: -0, z: 0.02638076, w: 0.99965197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1629,7 +1629,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3469701995047313161, guid: 91dc96aeb993842bb96471fd3b4ffc66, type: 3}
   shootDelay: 0.4
   projectileSpeed: 0.1
-  shootRange: 7.88
+  shootRange: 8
   firePoint: {fileID: 1962170174}
   damage: 10
   moveRange: 6.48

@@ -18,7 +18,7 @@ public abstract class ShootingEntity : Entity {
         }
 
         Projectile projectile = Instantiate(this.projectilePrefab.gameObject, this.firePoint.position, Quaternion.identity).GetComponent<Projectile>();
-        projectile.Init(targetPos, this.projectileSpeed, this.damage);
+        projectile.Init(targetPos, this.shootRange, this.projectileSpeed, this.damage);
         StartCoroutine(this.Reload());
     }
 
