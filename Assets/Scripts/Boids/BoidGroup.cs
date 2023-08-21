@@ -3,7 +3,7 @@ using UnityEngine;
 public class BoidGroup : MonoBehaviour {
     public int flockSize = 10;
     public GameObject boidPrefab;
-    public Sprite[] spritePool;
+    public BoidSkin[] skinPool;
     public Transform target;
 
     public BoidSettings settings;
@@ -27,8 +27,8 @@ public class BoidGroup : MonoBehaviour {
             this.boids[i] = boid;
             boid.transform.parent = this.transform;
 
-            Sprite boidSprite = this.spritePool[Random.Range(0, this.spritePool.Length)];
-            boid.Init(this.settings, boidSprite, this.target);
+            BoidSkin boidSkin = this.skinPool[Random.Range(0, this.skinPool.Length)];
+            boid.Init(this.settings, boidSkin, this.target);
         }
     }
 

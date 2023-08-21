@@ -1,6 +1,7 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(BoxCollider2D))]
 
 public class Boid : MonoBehaviour {
     private BoidSettings settings;
@@ -22,10 +23,12 @@ public class Boid : MonoBehaviour {
     [HideInInspector]
     public int numPerceivedFlockmates;
 
-    public void Init(BoidSettings settings, Sprite sprite, Transform target) {
+    public void Init(BoidSettings settings, BoidSkin skin, Transform target) {
         this.settings = settings;
         this.target = target;
-        this.GetComponent<SpriteRenderer>().sprite = sprite;
+        this.GetComponent<Animator>().runtimeAnimatorController = skin.skin;
+        this.GetComponent<BoxCollider2D>().size = skin.colliderWidthHeight;
+        this.GetComponent<BoxCollider2D>().offset = skin.colliderOffset;
 
         this.position = base.transform.position;
         this.right = base.transform.right;
