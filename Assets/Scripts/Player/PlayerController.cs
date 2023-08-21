@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using MoreMountains.Feedbacks;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
@@ -7,12 +9,22 @@ public class PlayerController : ShootingEntity {
     [Header("Player")]
     public float playerSpeed;
     public GameObject spotLight;
+    public MMF_Player moveStart;
+    public MMF_Player moveStartAudio;
+    public MMF_Player move;
+    public MMF_Player moveEnd;
+    public MMF_Player moveEndAudio;
+
+    private bool audioReady = true;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
 
     private float inputX = 0;
     private float inputY = 0;
+
+    private float previousInputX = 0;
+    private float previousInputY = 0;
 
     private Camera cam;
 
@@ -27,9 +39,35 @@ public class PlayerController : ShootingEntity {
         this.inputY = Input.GetAxis("Vertical");
 
         this.rb.AddForce(new Vector2(this.inputX * this.playerSpeed, this.inputY * this.playerSpeed));
-        if (this.inputX != 0 || this.inputY != 0) {
-            //TODO: Add move sound
+        if (this.inputX != 0 || this.inputY != 0)
+        {
+            if (previousInputX * 2 + previousInputY == 0)
+            {
+                move.PlayFeedbacks();
+                moveStart.PlayFeedbacks();
+                if (audioReady)
+                {
+                    moveStartAudio.PlayFeedbacks();
+                    StartCoroutine(AudioDelay());
+                }
+            }
+        }else if (inputX * 2 + inputY == 0)
+        {
+            if (previousInputX * 2 != 0 || previousInputY != 0)
+            {
+                move.StopFeedbacks();
+                moveEnd.PlayFeedbacks();
+                if (audioReady)
+                {
+                    moveEndAudio.PlayFeedbacks();
+                    StartCoroutine(AudioDelay());
+                }
+            }
+
         }
+
+        this.previousInputX = inputX;
+        this.previousInputY = inputY;
 
         if (Input.GetMouseButton(0)) {
             this.Hit();
@@ -60,5 +98,12 @@ public class PlayerController : ShootingEntity {
 
     private void Hit() {
         this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
+    }
+
+    private IEnumerator AudioDelay()
+    {
+        audioReady = false;
+        yield return new WaitForSeconds(4);
+        audioReady = true;
     }
 }
