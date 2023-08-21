@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using MoreMountains.Feedbacks;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -10,6 +9,7 @@ public class PlayerController : ShootingEntity {
     public float playerSpeed;
     public GameObject spotLight;
     public MMF_Player move;
+    public MMF_Player shoot;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -71,6 +71,10 @@ public class PlayerController : ShootingEntity {
     }
 
     private void Hit() {
+        if (base.isReadyToShoot())
+        {
+            this.shoot.PlayFeedbacks();
+        }
         this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
     }
 
