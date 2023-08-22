@@ -11,6 +11,7 @@ public class Boid : Entity {
     public GameObject haloObject;
 
     private BoidSettings settings;
+    private BoidGroup group;
     private Transform target;
 
     [HideInInspector]
@@ -29,8 +30,9 @@ public class Boid : Entity {
     [HideInInspector]
     public int numPerceivedFlockmates;
 
-    public void Init(BoidSettings settings, BoidSkin skin, Transform target) {
+    public void Init(BoidSettings settings, BoidGroup group, BoidSkin skin, Transform target) {
         this.settings = settings;
+        this.group = group;
         this.target = target;
 
         //Skin settings
@@ -116,5 +118,9 @@ public class Boid : Entity {
     }
 
     protected override void EntityStart(){ //Ignore this
+    }
+
+    protected override void OnDie() {
+        this.group.DeclareDead(this);
     }
 }

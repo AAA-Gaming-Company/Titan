@@ -48,4 +48,7 @@ public class EnemyController : Shooter {
             Gizmos.DrawRay(base.transform.position, direction);
         }
     }
+
+    protected override void OnDie() { //Ignore
+    }
 }

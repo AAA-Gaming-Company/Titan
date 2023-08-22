@@ -15229,7 +15229,6 @@ MonoBehaviour:
   boidPrefab: {fileID: 5491752739500677357, guid: 80b8b5e6ff083419886283e6c1f41333, type: 3}
   skinPool:
   - {fileID: 11400000, guid: f3064bcf882354b3e9babd862f80adc1, type: 2}
-  - {fileID: 11400000, guid: 45b6aa74aaa254ea8963249302b826c1, type: 2}
   target: {fileID: 964659777}
   settings: {fileID: 11400000, guid: 32f77a6426126499caec52a9520df255, type: 2}
   compute: {fileID: 7200000, guid: a764fe6611c114ffd90f0a1c13163d85, type: 3}
@@ -26300,14 +26299,6 @@ PrefabInstance:
     - target: {fileID: 1147709300549078245, guid: 668c62836c6c1a2468c44b64a726bba8, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147709301543568014, guid: 668c62836c6c1a2468c44b64a726bba8, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1147709301543568014, guid: 668c62836c6c1a2468c44b64a726bba8, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668c62836c6c1a2468c44b64a726bba8, type: 3}

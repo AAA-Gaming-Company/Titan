@@ -74,4 +74,7 @@ public class PlayerController : Shooter {
             this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
         }
     }
+
+    protected override void OnDie() { //Ignore
+    }
 }

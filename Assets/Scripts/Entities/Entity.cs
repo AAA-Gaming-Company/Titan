@@ -9,6 +9,7 @@ public abstract class Entity : MonoBehaviour {
     public MMF_Player deathFeedback = null;
 
     private int currentHP;
+    private bool dead = false;
 
     protected void Start() {
         this.currentHP = this.maxHP;
@@ -28,11 +29,21 @@ public abstract class Entity : MonoBehaviour {
         }
     }
 
+    protected abstract void OnDie();
+
     public void Die() {
+        this.OnDie();
+
         if (this.deathFeedback != null) {
             this.deathFeedback.transform.parent = null;
             this.deathFeedback.PlayFeedbacks();
         }
+
+        this.dead = true;
         Destroy(this.gameObject);
+    }
+
+    public bool isDead() {
+        return this.dead;
     }
 }
