@@ -1,5 +1,6 @@
 using UnityEngine;
 using Pathfinding;
+using MoreMountains.Feedbacks;
 
 [RequireComponent(typeof(AIDestinationSetter))]
 [RequireComponent(typeof(AIPath))]
@@ -8,6 +9,7 @@ public class EnemyController : Shooter {
     [Header("Enemy")]
     public float moveRange;
     public LayerMask playerLayer;
+    public MMF_Player shoot;
 
     private AIDestinationSetter destinationSetter;
     private AIPath aiPath;
@@ -20,6 +22,7 @@ public class EnemyController : Shooter {
     private void Update() {
         if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.shootRange && CanHitPlayer()) {
             this.Shoot(this.destinationSetter.target.position);
+            shoot.PlayFeedbacks();
         }
 
         if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.moveRange) {
