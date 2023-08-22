@@ -31,5 +31,4 @@ public abstract class ShootingEntity : Entity {
         yield return new WaitForSeconds(this.shootDelay);
         this.ready = true;
     }
-
 }

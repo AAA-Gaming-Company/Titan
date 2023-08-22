@@ -2,17 +2,15 @@ using UnityEngine;
 using MoreMountains.Feedbacks;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(SpriteRenderer))]
 
 public class PlayerController : ShootingEntity {
     [Header("Player")]
     public float playerSpeed;
     public GameObject spotLight;
-    public MMF_Player move;
-    public MMF_Player shoot;
+    public MMF_Player moveFeedback;
+    public MMF_Player shootFeedback;
 
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
 
     private float inputX = 0;
     private float inputY = 0;
@@ -21,7 +19,6 @@ public class PlayerController : ShootingEntity {
 
     protected override void EntityStart() {
         this.rb = GetComponent<Rigidbody2D>();
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.cam = Camera.main;
     }
 
@@ -42,14 +39,15 @@ public class PlayerController : ShootingEntity {
     private void Update() {
         this.UpdatePlayerSprite();
 
+        //Play and pause engine depending on if the player is moving
         if (this.rb.velocity.x != 0 || this.rb.velocity.y != 0) {
             if (!this.isPlayingSound) {
-                this.move.PlayFeedbacks();
+                this.moveFeedback.PlayFeedbacks();
                 this.isPlayingSound = true;
             }
         } else {
             if (this.isPlayingSound) {
-                this.move.StopFeedbacks();
+                this.moveFeedback.StopFeedbacks();
                 this.isPlayingSound = false;
             }
         }
@@ -71,11 +69,9 @@ public class PlayerController : ShootingEntity {
     }
 
     private void Hit() {
-        if (base.isReadyToShoot())
-        {
-            this.shoot.PlayFeedbacks();
+        if (base.isReadyToShoot()) {
+            this.shootFeedback.PlayFeedbacks();
+            this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
         }
-        this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
     }
-
 }

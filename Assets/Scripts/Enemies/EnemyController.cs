@@ -5,10 +5,12 @@ using Pathfinding;
 [RequireComponent(typeof(AIPath))]
 
 public class EnemyController : ShootingEntity {
+    [Header("Enemy")]
+    public float moveRange;
+    public LayerMask playerLayer;
+
     private AIDestinationSetter destinationSetter;
     private AIPath aiPath;
-    public float moveRange;
-    public LayerMask obstacle;
 
     protected override void EntityStart() {
         destinationSetter = GetComponent<AIDestinationSetter>();
@@ -27,14 +29,20 @@ public class EnemyController : ShootingEntity {
         }
     }
 
-    private bool CanHitPlayer()
-    {
-        // Alex help, it's supposed to check whether the player is behind a wall.
-        return !Physics2D.Raycast(transform.position, -destinationSetter.target.position, Vector2.Distance(base.transform.position, this.destinationSetter.target.position), obstacle);
+    //TODO: Maybe decrease the amount of times this is actually called, it's expensive.
+    private bool CanHitPlayer() {
+        Vector3 direction = this.destinationSetter.target.position - base.transform.position;
+        RaycastHit2D hit = Physics2D.Raycast(base.transform.position, direction, Vector2.Distance(base.transform.position, this.destinationSetter.target.position));
+        return hit.collider.gameObject.CompareTag("Player");
     }
 
-    public void OnDrawGizmos() {
+    private void OnDrawGizmos() {
         Gizmos.DrawWireSphere(base.transform.position, this.moveRange);
-        Gizmos.DrawRay(transform.position, -destinationSetter.target.position);
+
+        //Remove this code when fixed
+        if (this.destinationSetter != null) {
+            Vector3 direction = this.destinationSetter.target.position - base.transform.position;
+            Gizmos.DrawRay(base.transform.position, direction);
+        }
     }
 }

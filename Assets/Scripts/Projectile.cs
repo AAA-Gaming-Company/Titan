@@ -1,10 +1,10 @@
 using UnityEngine;
-using MoreMountains.Feedbacks;
 
 public class Projectile : MonoBehaviour {
     private Vector2 finalPosition;
     private float maxSpeed;
     private int damageDealt;
+
     public ContactFilter2D filter2D;
     public bool player;
 
