@@ -51,7 +51,7 @@ public class PlayerController : Shooter {
         this.UpdatePlayerSprite();
 
         //Play and pause engine depending on if the player is moving
-        if (this.rb.velocity.x != 0 || this.rb.velocity.y != 0) {
+        if (this.rb.velocity.x > 0.1f || this.rb.velocity.y > 0.1f) {
             if (!this.isPlayingSound) {
                 this.moveFeedback.PlayFeedbacks();
                 this.isPlayingSound = true;
