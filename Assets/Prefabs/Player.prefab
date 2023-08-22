@@ -5202,7 +5202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08f27e724e294fb1a6768b1d6b72669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 900000
+  maxHP: 100
   projectilePrefab: {fileID: 3469701995047313161, guid: 47cd6c965d854e647bd2c519f8efaea5, type: 3}
   shootDelay: 0.4
   projectileSpeed: 0.25
@@ -5211,8 +5211,8 @@ MonoBehaviour:
   damage: 15
   playerSpeed: 10
   spotLight: {fileID: 1147709301361158736}
-  move: {fileID: 1147709299948475870}
-  shoot: {fileID: 1147709301645682482}
+  moveFeedback: {fileID: 0}
+  shootFeedback: {fileID: 0}
 --- !u!60 &1147709300549078243
 PolygonCollider2D:
   m_ObjectHideFlags: 0
