@@ -1,9 +1,15 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Light2D))]
 
-public class Boid : MonoBehaviour {
+public class Boid : Entity {
+    [Header("Boid")]
+    public GameObject haloObject;
+
     private BoidSettings settings;
     private Transform target;
 
@@ -27,9 +33,14 @@ public class Boid : MonoBehaviour {
         this.settings = settings;
         this.target = target;
 
+        //Skin settings
         this.GetComponent<Animator>().runtimeAnimatorController = skin.skin;
-        this.GetComponent<BoxCollider2D>().size = skin.colliderWidthHeight;
-        this.GetComponent<BoxCollider2D>().offset = skin.colliderOffset;
+        BoxCollider2D boxCollider2D = this.GetComponent<BoxCollider2D>();
+        boxCollider2D.size = skin.colliderWidthHeight;
+        boxCollider2D.offset = skin.colliderOffset;
+        haloObject.transform.localScale = new Vector3(skin.haloSize, skin.haloSize);
+        haloObject.GetComponent<SpriteRenderer>().color = skin.haloColour;
+        this.GetComponent<Light2D>().pointLightOuterRadius = 2 * skin.haloSize;
 
         this.position = base.transform.position;
         this.right = base.transform.right;
@@ -102,5 +113,8 @@ public class Boid : MonoBehaviour {
     private Vector2 SteerTowards(Vector2 vector) {
         Vector2 v = vector.normalized * this.settings.maxSpeed - this.velocity;
         return Vector2.ClampMagnitude(v, this.settings.maxSteerForce);
+    }
+
+    protected override void EntityStart(){ //Ignore this
     }
 }
