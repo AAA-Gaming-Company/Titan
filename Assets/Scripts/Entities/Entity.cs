@@ -8,7 +8,7 @@ public abstract class Entity : MonoBehaviour {
     public MMF_Player damageFeedback = null;
     public MMF_Player deathFeedback = null;
 
-    private int currentHP;
+    public int currentHP;
     private bool dead = false;
 
     protected void Start() {
@@ -19,6 +19,7 @@ public abstract class Entity : MonoBehaviour {
     protected abstract void EntityStart();
 
     public void TakeDamage(int amount) {
+        this.OnDamage(amount);
         this.currentHP -= amount;
         if (this.damageFeedback != null) {
             this.damageFeedback.PlayFeedbacks();
@@ -30,6 +31,7 @@ public abstract class Entity : MonoBehaviour {
     }
 
     protected abstract void OnDie();
+    protected abstract void OnDamage(int amount);
 
     public void Die() {
         this.OnDie();

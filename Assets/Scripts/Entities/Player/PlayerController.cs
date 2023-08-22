@@ -9,17 +9,28 @@ public class PlayerController : Shooter {
     public GameObject spotLight;
     public MMF_Player moveFeedback;
     public MMF_Player shootFeedback;
+    public SpriteRenderer window;
 
     private Rigidbody2D rb;
 
     private float inputX = 0;
     private float inputY = 0;
+    private float hpIncrement = 0;
     private bool isPlayingSound = false;
     private Camera cam;
+
+    private float h;
+    private float s;
+    private float v;
+
 
     protected override void EntityStart() {
         this.rb = GetComponent<Rigidbody2D>();
         this.cam = Camera.main;
+
+        Color.RGBToHSV(window.color, out h, out s, out v);
+        this.hpIncrement = this.v / base.maxHP ;
+        Debug.Log(hpIncrement);
     }
 
     private void FixedUpdate() {
@@ -76,5 +87,12 @@ public class PlayerController : Shooter {
     }
 
     protected override void OnDie() { //Ignore
+    }
+    protected override void OnDamage(int amount)
+    {
+        Color.RGBToHSV(window.color, out h, out s, out v);
+        v -= hpIncrement * amount;
+
+        window.color = Color.HSVToRGB(h, s, v);
     }
 }

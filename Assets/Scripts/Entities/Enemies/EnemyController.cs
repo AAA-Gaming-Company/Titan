@@ -51,4 +51,8 @@ public class EnemyController : Shooter {
 
     protected override void OnDie() { //Ignore
     }
+    protected override void OnDamage(int amount)
+    {
+
+    }
 }

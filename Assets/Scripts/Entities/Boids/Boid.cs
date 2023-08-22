@@ -155,4 +155,8 @@ public class Boid : Entity {
     protected override void OnDie() {
         this.group.DeclareDead(this);
     }
+    protected override void OnDamage(int amount)
+    {
+
+    }
 }
