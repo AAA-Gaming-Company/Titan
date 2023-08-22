@@ -21,7 +21,7 @@ public class BoidGroup : MonoBehaviour {
             Vector3 spawnPos = base.transform.position;
             spawnPos.x += Random.Range(-spreadFactor, spreadFactor);
             spawnPos.y += Random.Range(-spreadFactor, spreadFactor);
-            spawnPos.z += Random.Range(0, 1) == 0 ? -1 : 1; //This will give either -1 or 1, but not 0
+            spawnPos.z += Random.Range(0, 2) == 0 ? -2 : 2; //This will give either -2 or 2, but not in between
 
             Boid boid = Instantiate(this.boidPrefab, spawnPos, Quaternion.identity).GetComponent<Boid>();
 
