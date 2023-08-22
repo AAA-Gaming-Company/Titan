@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class ShootingEntity : Entity {
+public abstract class Shooter : Entity {
     [Header("Shooter")]
     public Projectile projectilePrefab;
     public float shootDelay;

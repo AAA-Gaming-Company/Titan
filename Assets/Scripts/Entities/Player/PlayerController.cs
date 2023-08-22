@@ -3,7 +3,7 @@ using MoreMountains.Feedbacks;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class PlayerController : ShootingEntity {
+public class PlayerController : Shooter {
     [Header("Player")]
     public float playerSpeed;
     public GameObject spotLight;

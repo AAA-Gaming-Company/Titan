@@ -5,10 +5,11 @@ public abstract class Entity : MonoBehaviour {
     [Header("Entity")]
     public int maxHP;
 
-    public int currentHP;
-
     public MMF_Player damageFeedback;
     public MMF_Player deathFeedback;
+
+    //TODO: Should be made private once testing is finished
+    public int currentHP;
 
     protected void Start() {
         this.currentHP = this.maxHP;
@@ -19,15 +20,16 @@ public abstract class Entity : MonoBehaviour {
 
     public void TakeDamage(int amount) {
         this.currentHP -= amount;
-        damageFeedback.PlayFeedbacks();
+        this.damageFeedback.PlayFeedbacks();
+
         if (this.currentHP <= 0) {
             this.Die();
         }
     }
 
     public void Die() {
-        deathFeedback.transform.parent = null;
-        deathFeedback.PlayFeedbacks();
+        this.deathFeedback.transform.parent = null;
+        this.deathFeedback.PlayFeedbacks();
         Destroy(this.gameObject);
     }
 }

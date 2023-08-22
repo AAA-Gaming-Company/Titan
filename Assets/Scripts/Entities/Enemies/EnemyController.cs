@@ -4,7 +4,7 @@ using Pathfinding;
 [RequireComponent(typeof(AIDestinationSetter))]
 [RequireComponent(typeof(AIPath))]
 
-public class EnemyController : ShootingEntity {
+public class EnemyController : Shooter {
     [Header("Enemy")]
     public float moveRange;
     public LayerMask playerLayer;
