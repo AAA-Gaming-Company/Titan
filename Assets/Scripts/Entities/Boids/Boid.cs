@@ -3,8 +3,8 @@ using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Light2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 
 public class Boid : Entity {
     [Header("Boid")]
@@ -37,9 +37,9 @@ public class Boid : Entity {
 
         //Skin settings
         this.GetComponent<Animator>().runtimeAnimatorController = skin.skin;
-        BoxCollider2D boxCollider2D = this.GetComponent<BoxCollider2D>();
-        boxCollider2D.size = skin.colliderWidthHeight;
-        boxCollider2D.offset = skin.colliderOffset;
+        //BoxCollider2D boxCollider2D = this.GetComponent<BoxCollider2D>();
+        //boxCollider2D.size = skin.colliderWidthHeight;
+        //boxCollider2D.offset = skin.colliderOffset;
         haloObject.transform.localScale = new Vector3(skin.haloSize, skin.haloSize);
         haloObject.GetComponent<SpriteRenderer>().color = skin.haloColour;
         this.GetComponent<Light2D>().pointLightOuterRadius = 2 * skin.haloSize;
@@ -79,6 +79,13 @@ public class Boid : Entity {
             acceleration += collisionAvoidForce;
         }
 
+        if (IsHeadingForWall())
+        {
+            Vector2 collisionAvoidDir = WallRays();
+            Vector2 collisionAvoidForce = SteerTowards(collisionAvoidDir) * this.settings.avoidWallWeight;
+            acceleration += collisionAvoidForce;
+        }
+
         this.velocity += acceleration * Time.deltaTime;
         float speed = this.velocity.magnitude;
         Vector2 dir = this.velocity / speed;
@@ -98,6 +105,16 @@ public class Boid : Entity {
 
         return false;
     }
+    private bool IsHeadingForWall()
+    {
+        if (Physics2D.CircleCast(this.position, this.settings.boundsRadius, this.right, this.settings.avoidWallWeight, this.settings.wallMask))
+        {
+            return true;
+        }
+        else { }
+
+        return false;
+    }
 
     private Vector2 ObstacleRays() {
         Vector2[] rayDirections = BoidHelper.directions;
@@ -105,6 +122,21 @@ public class Boid : Entity {
         for (int i = 0; i < rayDirections.Length; i++) {
             Vector2 dir = base.transform.TransformDirection(rayDirections[i]);
             if (!Physics2D.CircleCast(this.position, this.settings.boundsRadius, dir, this.settings.collisionAvoidDst, this.settings.obstacleMask)) {
+                return dir;
+            }
+        }
+
+        return this.right;
+    }
+    private Vector2 WallRays()
+    {
+        Vector2[] rayDirections = BoidHelper.directions;
+
+        for (int i = 0; i < rayDirections.Length; i++)
+        {
+            Vector2 dir = base.transform.TransformDirection(rayDirections[i]);
+            if (!Physics2D.CircleCast(this.position, this.settings.boundsRadius, dir, this.settings.avoidWallWeight, this.settings.wallMask))
+            {
                 return dir;
             }
         }
