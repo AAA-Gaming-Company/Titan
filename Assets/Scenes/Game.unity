@@ -24502,7 +24502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220432b5b28e447b9852b035e5a504a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockSize: 70
+  flockSize: 2
   boidPrefab: {fileID: 5491752739500677357, guid: 80b8b5e6ff083419886283e6c1f41333, type: 3}
   skinPool:
   - {fileID: 11400000, guid: 45b6aa74aaa254ea8963249302b826c1, type: 2}
@@ -25093,7 +25093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220432b5b28e447b9852b035e5a504a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flockSize: 70
+  flockSize: 2
   boidPrefab: {fileID: 5491752739500677357, guid: 80b8b5e6ff083419886283e6c1f41333, type: 3}
   skinPool:
   - {fileID: 11400000, guid: 4334c2b0d2a6145b4a06af4642b29b06, type: 2}

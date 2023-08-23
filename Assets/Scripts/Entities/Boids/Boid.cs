@@ -104,10 +104,9 @@ public class Boid : Entity {
 
         return false;
     }
-    private bool IsHeadingForWall()
-    {
-        if (Physics2D.CircleCast(this.position, this.settings.boundsRadius, this.right, this.settings.avoidWallWeight, this.settings.wallMask))
-        {
+
+    private bool IsHeadingForWall() {
+        if (Physics2D.CircleCast(this.position, this.settings.boundsRadius, this.right, this.settings.avoidWallWeight, this.settings.wallMask)) {
             return true;
         }
         else { }
