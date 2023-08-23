@@ -16,21 +16,16 @@ public class PlayerController : Shooter {
     private float inputX = 0;
     private float inputY = 0;
     private float hpIncrement = 0;
-    private bool isPlayingSound = false;
+    private bool isPlayingMove = false;
     private Camera cam;
-
-    private float h;
-    private float s;
-    private float v;
-
 
     protected override void EntityStart() {
         this.rb = GetComponent<Rigidbody2D>();
         this.cam = Camera.main;
 
-        Color.RGBToHSV(window.color, out h, out s, out v);
-        this.hpIncrement = this.v / base.maxHP ;
-        Debug.Log(hpIncrement);
+        float h, s, v;
+        Color.RGBToHSV(this.window.color, out h, out s, out v);
+        this.hpIncrement = v / base.maxHP ;
     }
 
     private void FixedUpdate() {
@@ -50,16 +45,17 @@ public class PlayerController : Shooter {
     private void Update() {
         this.UpdatePlayerSprite();
 
-        //Play and pause engine depending on if the player is moving
-        if (this.rb.velocity.x > 0.1f || this.rb.velocity.y > 0.1f) {
-            if (!this.isPlayingSound) {
+        //Play and pause engine depending on if the player is moving.
+        //We use the absolute value of the velocity because velocity could be negative.
+        if (Mathf.Abs(this.rb.velocity.x) > 0.1f || Mathf.Abs(this.rb.velocity.y) > 0.1f) {
+            if (!this.isPlayingMove) {
                 this.moveFeedback.PlayFeedbacks();
-                this.isPlayingSound = true;
+                this.isPlayingMove = true;
             }
         } else {
-            if (this.isPlayingSound) {
+            if (this.isPlayingMove) {
                 this.moveFeedback.StopFeedbacks();
-                this.isPlayingSound = false;
+                this.isPlayingMove = false;
             }
         }
     }
@@ -88,11 +84,12 @@ public class PlayerController : Shooter {
 
     protected override void OnDie() { //Ignore
     }
-    protected override void OnDamage(int amount)
-    {
-        Color.RGBToHSV(window.color, out h, out s, out v);
+
+    protected override void OnDamage(int amount) {
+        float h, s, v;
+        Color.RGBToHSV(this.window.color, out h, out s, out v);
         v -= hpIncrement * amount;
 
-        window.color = Color.HSVToRGB(h, s, v);
+        this.window.color = Color.HSVToRGB(h, s, v);
     }
 }

@@ -400,7 +400,7 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 1147709299948475870}
         DebugActive: 0
-        TargetShaker: {fileID: 5126378185494258853}
+        TargetShaker: {fileID: 0}
         Duration: 100000
         ResetShakerValuesAfterShake: 1
         ResetTargetValuesAfterShake: 1

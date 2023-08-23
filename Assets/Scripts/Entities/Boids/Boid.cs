@@ -79,8 +79,7 @@ public class Boid : Entity {
             acceleration += collisionAvoidForce;
         }
 
-        if (IsHeadingForWall())
-        {
+        if (IsHeadingForWall()) {
             Vector2 collisionAvoidDir = WallRays();
             Vector2 collisionAvoidForce = SteerTowards(collisionAvoidDir) * this.settings.avoidWallWeight;
             acceleration += collisionAvoidForce;
@@ -155,8 +154,8 @@ public class Boid : Entity {
     protected override void OnDie() {
         this.group.DeclareDead(this);
     }
-    protected override void OnDamage(int amount)
-    {
+
+    protected override void OnDamage(int amount) {
 
     }
 }
