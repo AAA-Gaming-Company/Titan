@@ -28,7 +28,7 @@ public class BoidGroup : MonoBehaviour {
             boid.transform.parent = this.transform;
 
             BoidSkin boidSkin = this.skinPool[Random.Range(0, this.skinPool.Length)];
-            boid.Init(this.settings, this, boidSkin, this.target);
+            boid.Init(this.settings, boidSkin, this.target);
         }
     }
 
@@ -68,22 +68,6 @@ public class BoidGroup : MonoBehaviour {
         }
 
         boidBuffer.Release();
-    }
-
-    public void DeclareDead(Boid deadBoid) {
-        Boid[] oldArray = this.boids;
-        int oldLengh = this.boids.Length;
-
-        this.boids = new Boid[oldLengh - 1];
-        int counter = 0;
-
-        for (int i = 0; i < oldLengh; i++) {
-            Boid boidInQuestion = oldArray[i];
-            if (boidInQuestion.GetInstanceID() != deadBoid.GetInstanceID()) {
-                this.boids[counter] = boidInQuestion;
-                counter++;
-            }
-        }
     }
 
     public void Kill() {

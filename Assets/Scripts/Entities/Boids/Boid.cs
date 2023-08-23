@@ -4,14 +4,12 @@ using UnityEngine.Rendering.Universal;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Light2D))]
-[RequireComponent(typeof(BoxCollider2D))]
 
-public class Boid : Entity {
+public class Boid : MonoBehaviour {
     [Header("Boid")]
     public GameObject haloObject;
 
     private BoidSettings settings;
-    private BoidGroup group;
     private Transform target;
 
     [HideInInspector]
@@ -30,23 +28,19 @@ public class Boid : Entity {
     [HideInInspector]
     public int numPerceivedFlockmates;
 
-    public void Init(BoidSettings settings, BoidGroup group, BoidSkin skin, Transform target) {
-        this.settings = settings;
-        this.group = group;
-        this.target = target;
-
+    public void Init(BoidSettings settings, BoidSkin skin, Transform target) {
         //Skin settings
         this.GetComponent<Animator>().runtimeAnimatorController = skin.skin;
-        BoxCollider2D boxCollider2D = this.GetComponent<BoxCollider2D>();
-        boxCollider2D.size = skin.colliderWidthHeight;
-        boxCollider2D.offset = skin.colliderOffset;
         haloObject.transform.localScale = 1.5f * new Vector3(skin.haloSize, skin.haloSize);
         haloObject.GetComponent<SpriteRenderer>().color = skin.haloColour;
         this.GetComponent<Light2D>().pointLightOuterRadius = 3 * skin.haloSize;
 
+        this.settings = settings;
+        this.target = target;
         this.position = base.transform.position;
         this.right = base.transform.right;
 
+        //Init stuff
         float startSpeed = (this.settings.minSpeed + this.settings.maxSpeed) / 2;
         this.velocity = this.right * startSpeed;
     }
@@ -73,12 +67,6 @@ public class Boid : Entity {
             acceleration += seperationForce;
         }
 
-        if (IsHeadingForCollision()) {
-            Vector2 collisionAvoidDir = ObstacleRays();
-            Vector2 collisionAvoidForce = SteerTowards(collisionAvoidDir) * this.settings.avoidCollisionWeight;
-            acceleration += collisionAvoidForce;
-        }
-
         this.velocity += acceleration * Time.deltaTime;
         float speed = this.velocity.magnitude;
         Vector2 dir = this.velocity / speed;
@@ -91,39 +79,8 @@ public class Boid : Entity {
         this.right = dir;
     }
 
-    private bool IsHeadingForCollision() {
-        if (Physics2D.CircleCast(this.position, this.settings.boundsRadius, this.right, this.settings.collisionAvoidDst, this.settings.obstacleMask)) {
-            return true;
-        } else { }
-
-        return false;
-    }
-
-    private Vector2 ObstacleRays() {
-        Vector2[] rayDirections = BoidHelper.directions;
-
-        for (int i = 0; i < rayDirections.Length; i++) {
-            Vector2 dir = base.transform.TransformDirection(rayDirections[i]);
-            if (!Physics2D.CircleCast(this.position, this.settings.boundsRadius, dir, this.settings.collisionAvoidDst, this.settings.obstacleMask)) {
-                return dir;
-            }
-        }
-
-        return this.right;
-    }
-
     private Vector2 SteerTowards(Vector2 vector) {
         Vector2 v = vector.normalized * this.settings.maxSpeed - this.velocity;
         return Vector2.ClampMagnitude(v, this.settings.maxSteerForce);
-    }
-
-    protected override void EntityStart() { //Ignore this
-    }
-
-    protected override void OnDie() {
-        this.group.DeclareDead(this);
-    }
-
-    protected override void OnDamage(int amount) {
     }
 }
