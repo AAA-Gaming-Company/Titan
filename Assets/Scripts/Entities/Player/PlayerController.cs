@@ -9,6 +9,7 @@ public class PlayerController : Shooter {
     public GameObject spotLight;
     public MMF_Player moveFeedback;
     public MMF_Player shootFeedback;
+    public MMF_Player loadFeedback;
     public SpriteRenderer window;
 
     private Rigidbody2D rb;
@@ -18,6 +19,7 @@ public class PlayerController : Shooter {
     private float hpIncrement = 0;
     private bool isPlayingMove = false;
     private Camera cam;
+    private bool ramping = false;
 
     protected override void EntityStart() {
         this.rb = GetComponent<Rigidbody2D>();
@@ -36,9 +38,17 @@ public class PlayerController : Shooter {
 
         if (Input.GetMouseButton(0)) {
             this.Hit();
-
+            if (!ramping)
+            {
+                loadFeedback.PlayFeedbacks();
+                ramping = true;
+            }
             //Probably should also rotate the player if they click in a
             // different direction to that in which they are going.
+        }else
+        {
+            ramping = false;
+            loadFeedback.StopFeedbacks();
         }
     }
 

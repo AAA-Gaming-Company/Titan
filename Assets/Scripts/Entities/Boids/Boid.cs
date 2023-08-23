@@ -42,7 +42,7 @@ public class Boid : Entity {
         //boxCollider2D.offset = skin.colliderOffset;
         haloObject.transform.localScale = new Vector3(skin.haloSize, skin.haloSize);
         haloObject.GetComponent<SpriteRenderer>().color = skin.haloColour;
-        this.GetComponent<Light2D>().pointLightOuterRadius = 2 * skin.haloSize;
+        this.GetComponent<Light2D>().pointLightOuterRadius = 4 * skin.haloSize;
 
         this.position = base.transform.position;
         this.right = base.transform.right;
