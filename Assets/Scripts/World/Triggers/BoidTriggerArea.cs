@@ -7,7 +7,7 @@ public class BoidTriggerArea : TriggerArea {
 
     protected override void TriggerAction() {
         if (this.oldGroup != null) {
-            this.oldGroup.Kill();
+            this.oldGroup.Kill(); //Maybe move them up a bit, but then kill
         }
 
         if (this.newGroup != null) {

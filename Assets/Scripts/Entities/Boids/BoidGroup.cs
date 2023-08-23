@@ -28,7 +28,7 @@ public class BoidGroup : MonoBehaviour {
             boid.transform.parent = this.transform;
 
             BoidSkin boidSkin = this.skinPool[Random.Range(0, this.skinPool.Length)];
-            boid.Init(this.settings, boidSkin, this.target);
+            boid.Init(this.settings, boidSkin);
         }
     }
 
@@ -64,7 +64,7 @@ public class BoidGroup : MonoBehaviour {
             this.boids[i].avgAvoidanceHeading = boidData[i].avoidanceHeading;
             this.boids[i].numPerceivedFlockmates = boidData[i].numFlockmates;
 
-            this.boids[i].UpdateBoid();
+            this.boids[i].UpdateBoid(this.target.position);
         }
 
         boidBuffer.Release();
@@ -76,6 +76,10 @@ public class BoidGroup : MonoBehaviour {
         }
         this.boids = null;
         Destroy(base.gameObject);
+    }
+
+    public void UpdateTarget(Transform target) {
+        this.target = target;
     }
 
     public struct BoidData {

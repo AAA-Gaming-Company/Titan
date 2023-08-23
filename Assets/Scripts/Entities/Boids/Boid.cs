@@ -10,7 +10,7 @@ public class Boid : MonoBehaviour {
     public GameObject haloObject;
 
     private BoidSettings settings;
-    private Transform target;
+    private BoidSkin skin;
 
     [HideInInspector]
     public Vector2 position;
@@ -28,7 +28,7 @@ public class Boid : MonoBehaviour {
     [HideInInspector]
     public int numPerceivedFlockmates;
 
-    public void Init(BoidSettings settings, BoidSkin skin, Transform target) {
+    public void Init(BoidSettings settings, BoidSkin skin) {
         //Skin settings
         this.GetComponent<Animator>().runtimeAnimatorController = skin.skin;
         haloObject.transform.localScale = 1.5f * new Vector3(skin.haloSize, skin.haloSize);
@@ -36,7 +36,7 @@ public class Boid : MonoBehaviour {
         this.GetComponent<Light2D>().pointLightOuterRadius = 3 * skin.haloSize;
 
         this.settings = settings;
-        this.target = target;
+        this.skin = skin;
         this.position = base.transform.position;
         this.right = base.transform.right;
 
@@ -45,11 +45,11 @@ public class Boid : MonoBehaviour {
         this.velocity = this.right * startSpeed;
     }
 
-    public void UpdateBoid() {
+    public void UpdateBoid(Vector2 target) {
         Vector2 acceleration = Vector2.zero;
 
-        if (this.target != null) {
-            Vector2 offsetToTarget = (Vector2) this.target.position - this.position;
+        if (target != null) {
+            Vector2 offsetToTarget = target - this.position;
             acceleration = SteerTowards(offsetToTarget) * this.settings.targetWeight;
         }
 
@@ -60,7 +60,7 @@ public class Boid : MonoBehaviour {
 
             Vector2 alignmentForce = SteerTowards(this.avgFlockHeading) * this.settings.alignWeight;
             Vector2 cohesionForce = SteerTowards(offsetToFlockmatesCentre) * this.settings.cohesionWeight;
-            Vector2 seperationForce = SteerTowards(this.avgAvoidanceHeading) * this.settings.seperateWeight;
+            Vector2 seperationForce = SteerTowards(this.avgAvoidanceHeading) * (this.settings.seperateWeight * this.skin.sizeFactor);
 
             acceleration += alignmentForce;
             acceleration += cohesionForce;
