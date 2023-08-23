@@ -1,12 +1,15 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
-    [Header("Buttons")]
+    [Header("Elemnts")]
     public Button playButton;
     public Button creditsButton;
-    public Button quitButton;
     public Button creditsCloseButton;
+    public Button quitButton;
+    public ProgressBar loadingBar;
 
     [Header("Screens")]
     public GameObject creditsScreen;
@@ -20,8 +23,8 @@ public class MenuScript : MonoBehaviour {
     private void Start() {
         this.playButton.onClick.AddListener(this.ClickPlay);
         this.creditsButton.onClick.AddListener(this.ClickCredits);
-        this.quitButton.onClick.AddListener(this.ClickQuit);
         this.creditsCloseButton.onClick.AddListener(this.ClickCreditsHide);
+        this.quitButton.onClick.AddListener(this.ClickQuit);
 
         this.creditsScreen.SetActive(false);
         this.loadingScreen.SetActive(false);
@@ -34,7 +37,7 @@ public class MenuScript : MonoBehaviour {
     }
 
     public void ClickPlay() {
-        throw new UnityException(":))");
+        StartCoroutine(this.LoadGameScene());
     }
 
     public void ClickCredits() {
@@ -47,5 +50,18 @@ public class MenuScript : MonoBehaviour {
 
     public void ClickQuit() {
         Application.Quit();
+    }
+
+    private IEnumerator LoadGameScene() {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Game");
+        this.loadingScreen.SetActive(true);
+
+        while (!operation.isDone) {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            this.loadingBar.UpdateValue(progress);
+            yield return null;
+        }
+
+        Destroy(this.gameObject);
     }
 }
