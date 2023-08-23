@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27929969d0e364b86bad7d6fa29a0be5, type: 3}
   m_Name: PinkFish
   m_EditorClassIdentifier: 
+  identifier: 1
   skin: {fileID: 9100000, guid: fd5f89e9c5a084da7b6cc6c3920c3ccc, type: 2}
   sizeFactor: 1
   haloSize: 1

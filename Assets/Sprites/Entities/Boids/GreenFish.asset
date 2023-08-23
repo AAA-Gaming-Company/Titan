@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27929969d0e364b86bad7d6fa29a0be5, type: 3}
   m_Name: GreenFish
   m_EditorClassIdentifier: 
+  identifier: 2
   skin: {fileID: 9100000, guid: 9bce6b48e7a8d4b1090f7c91e882c85a, type: 2}
   sizeFactor: 1.5
   haloSize: 2

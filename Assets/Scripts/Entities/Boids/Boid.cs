@@ -10,6 +10,7 @@ public class Boid : MonoBehaviour {
     public GameObject haloObject;
 
     private BoidSettings settings;
+    private Transform target;
     private BoidSkin skin;
 
     [HideInInspector]
@@ -28,14 +29,20 @@ public class Boid : MonoBehaviour {
     [HideInInspector]
     public int numPerceivedFlockmates;
 
-    public void Init(BoidSettings settings, BoidSkin skin) {
+    public void Init(BoidSettings settings, Transform target, BoidSkin skin) {
         //Skin settings
         this.GetComponent<Animator>().runtimeAnimatorController = skin.skin;
-        haloObject.transform.localScale = 1.5f * new Vector3(skin.haloSize, skin.haloSize);
-        haloObject.GetComponent<SpriteRenderer>().color = skin.haloColour;
+        this.haloObject.transform.localScale = 1.5f * new Vector3(skin.haloSize, skin.haloSize);
+        this.haloObject.GetComponent<SpriteRenderer>().color = skin.haloColour;
         this.GetComponent<Light2D>().pointLightOuterRadius = 3 * skin.haloSize;
 
+        //Set the halo Z pos
+        Vector3 haloPos = this.haloObject.transform.position;
+        haloPos.z += 0.1f * skin.identifier;
+        this.haloObject.transform.position = haloPos;
+
         this.settings = settings;
+        this.target = target;
         this.skin = skin;
         this.position = base.transform.position;
         this.right = base.transform.right;
@@ -45,11 +52,11 @@ public class Boid : MonoBehaviour {
         this.velocity = this.right * startSpeed;
     }
 
-    public void UpdateBoid(Vector2 target) {
+    public void UpdateBoid() {
         Vector2 acceleration = Vector2.zero;
 
-        if (target != null) {
-            Vector2 offsetToTarget = target - this.position;
+        if (this.target != null) {
+            Vector2 offsetToTarget = (Vector2) this.target.position - this.position;
             acceleration = SteerTowards(offsetToTarget) * this.settings.targetWeight;
         }
 
@@ -82,5 +89,9 @@ public class Boid : MonoBehaviour {
     private Vector2 SteerTowards(Vector2 vector) {
         Vector2 v = vector.normalized * this.settings.maxSpeed - this.velocity;
         return Vector2.ClampMagnitude(v, this.settings.maxSteerForce);
+    }
+
+    public void UpdateTarget(Transform target) {
+        this.target = target;
     }
 }

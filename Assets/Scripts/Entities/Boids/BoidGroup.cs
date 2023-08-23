@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BoidGroup : MonoBehaviour {
     public int flockSize = 10;
+    public bool autoSpawn = true;
     public GameObject boidPrefab;
     public BoidSkin[] skinPool;
     public Transform target;
@@ -10,6 +11,12 @@ public class BoidGroup : MonoBehaviour {
     public ComputeShader compute;
 
     private Boid[] boids = null;
+
+    private void Start() {
+        if (this.autoSpawn) {
+            this.Spawn();
+        }
+    }
 
     public void Spawn() {
         this.boids = new Boid[this.flockSize];
@@ -28,7 +35,7 @@ public class BoidGroup : MonoBehaviour {
             boid.transform.parent = this.transform;
 
             BoidSkin boidSkin = this.skinPool[Random.Range(0, this.skinPool.Length)];
-            boid.Init(this.settings, boidSkin);
+            boid.Init(this.settings, this.target, boidSkin);
         }
     }
 
@@ -64,7 +71,7 @@ public class BoidGroup : MonoBehaviour {
             this.boids[i].avgAvoidanceHeading = boidData[i].avoidanceHeading;
             this.boids[i].numPerceivedFlockmates = boidData[i].numFlockmates;
 
-            this.boids[i].UpdateBoid(this.target.position);
+            this.boids[i].UpdateBoid();
         }
 
         boidBuffer.Release();
@@ -79,6 +86,9 @@ public class BoidGroup : MonoBehaviour {
     }
 
     public void UpdateTarget(Transform target) {
+        for (int i = 0; i < this.boids.Length; i++) {
+            this.boids[i].UpdateTarget(target);
+        }
         this.target = target;
     }
 

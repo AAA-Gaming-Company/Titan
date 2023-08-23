@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27929969d0e364b86bad7d6fa29a0be5, type: 3}
   m_Name: TurquoiseFish
   m_EditorClassIdentifier: 
+  identifier: 3
   skin: {fileID: 9100000, guid: 472f400acc7e744d0a26f016b60ccc35, type: 2}
   sizeFactor: 2
   haloSize: 2
