@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27929969d0e364b86bad7d6fa29a0be5, type: 3}
-  m_Name: GreenFish
+  m_Name: TurquoiseFish
   m_EditorClassIdentifier: 
-  skin: {fileID: 9100000, guid: 9bce6b48e7a8d4b1090f7c91e882c85a, type: 2}
-  colliderWidthHeight: {x: 0.75, y: 0.81}
-  colliderOffset: {x: -0.14, y: -0.14}
+  skin: {fileID: 9100000, guid: 472f400acc7e744d0a26f016b60ccc35, type: 2}
+  colliderWidthHeight: {x: 0.92, y: 1.45}
+  colliderOffset: {x: 0.02, y: 0}
   haloSize: 2
-  haloColour: {r: 0, g: 0.3679245, b: 0.034628186, a: 1}
+  haloColour: {r: 0, g: 0.3584906, b: 0.15357055, a: 1}

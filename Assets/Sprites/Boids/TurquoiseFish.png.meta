@@ -1,0 +1,491 @@
+fileFormatVersion: 2
+guid: b44f887eb43f94133bfd7200f4064e71
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TurquoiseFish_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 317
+        width: 129
+        height: 150
+      alignment: 9
+      pivot: {x: 0.6033403, y: 0.5000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9e0980bd8f0e4d31a3853c68f6a94cd
+      internalID: 1157392814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 315
+        width: 130
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6217731, y: 0.511414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35d815c5812d34c24ad701c9a0f4ff9d
+      internalID: -1306655599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_3
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 312
+        width: 129
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6097996, y: 0.511414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea2a84dfffde4dacb79b848e7818195
+      internalID: -248424577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_4
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 305
+        width: 131
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6208435, y: 0.5057072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9467aba53039249b6b2724aea42ed290
+      internalID: -1319045342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_6
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 307
+        width: 136
+        height: 151
+      alignment: 9
+      pivot: {x: 0.63478, y: 0.48896477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd736608c982844998c68e837490b5fb
+      internalID: 1863750673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_7
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 308
+        width: 135
+        height: 146
+      alignment: 9
+      pivot: {x: 0.62960654, y: 0.5171206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2a9c9d62e754ba4808911babb28ab9
+      internalID: 1811322570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_8
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 310
+        width: 135
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6419506, y: 0.5114138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ecc42f806ca4c8a974f8a5b9b0f69f
+      internalID: 1035728980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_9
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 311
+        width: 133
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6252919, y: 0.5057072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb1f71ccec2c42558aab0b6593decbe
+      internalID: -1153552431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_10
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 311
+        width: 134
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6305742, y: 0.5057072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06bae0f8aef2f4168be5970a95a57069
+      internalID: -105353045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_11
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 314
+        width: 134
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6301825, y: 0.5170689}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61990be84224145f9a87010d1005472f
+      internalID: 2099918622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_12
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 316
+        width: 131
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6141404, y: 0.51137906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781c2e9d4b75043469fae854ae7ead8e
+      internalID: -2043126309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 72
+        width: 133
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6186702, y: 0.5170689}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98c017b75b064fb9bc12496f563f2cb
+      internalID: 759805948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_14
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 66
+        width: 134
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6239838, y: 0.5113793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf409f5d93a845a6a972501bc62b664
+      internalID: 170553211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_15
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 61
+        width: 136
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6343765, y: 0.5113793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf3206a7a58e47e2abedfaab70c6cdb
+      internalID: 1634431210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurquoiseFish_16
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 60
+        width: 130
+        height: 146
+      alignment: 9
+      pivot: {x: 0.6150184, y: 0.5170689}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5fbd60f2aa44788a0818a10e84ec8a
+      internalID: 235194181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TurquoiseFish_0: -2082934433
+      TurquoiseFish_1: 1157392814
+      TurquoiseFish_10: -105353045
+      TurquoiseFish_11: 2099918622
+      TurquoiseFish_12: -2043126309
+      TurquoiseFish_13: 759805948
+      TurquoiseFish_14: 170553211
+      TurquoiseFish_15: 1634431210
+      TurquoiseFish_16: 235194181
+      TurquoiseFish_2: -1306655599
+      TurquoiseFish_3: -248424577
+      TurquoiseFish_4: -1319045342
+      TurquoiseFish_5: 287560530
+      TurquoiseFish_6: 1863750673
+      TurquoiseFish_7: 1811322570
+      TurquoiseFish_8: 1035728980
+      TurquoiseFish_9: -1153552431
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
