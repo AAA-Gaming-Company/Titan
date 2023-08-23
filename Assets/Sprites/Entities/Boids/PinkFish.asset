@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PinkFish
   m_EditorClassIdentifier: 
   skin: {fileID: 9100000, guid: fd5f89e9c5a084da7b6cc6c3920c3ccc, type: 2}
-  colliderWidthHeight: {x: 0.75, y: 0.29}
+  colliderWidthHeight: {x: 0.37, y: 0.14}
   colliderOffset: {x: -0.02, y: 0}
   haloSize: 1
-  haloColour: {r: 0.5647059, g: 0, b: 0.49411765, a: 1}
+  haloColour: {r: 0.18867922, g: 0, b: 0.16545707, a: 1}

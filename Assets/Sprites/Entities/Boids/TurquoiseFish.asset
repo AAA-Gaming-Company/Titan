@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TurquoiseFish
   m_EditorClassIdentifier: 
   skin: {fileID: 9100000, guid: 472f400acc7e744d0a26f016b60ccc35, type: 2}
-  colliderWidthHeight: {x: 0.92, y: 1.45}
+  colliderWidthHeight: {x: 0.46, y: 0.725}
   colliderOffset: {x: 0.02, y: 0}
   haloSize: 2
-  haloColour: {r: 0, g: 0.3584906, b: 0.15357055, a: 1}
+  haloColour: {r: 0, g: 0.3679245, b: 0.26870525, a: 1}

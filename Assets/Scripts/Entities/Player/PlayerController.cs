@@ -39,17 +39,16 @@ public class PlayerController : Shooter {
 
         if (Input.GetMouseButton(0)) {
             this.Hit();
-            if (!ramping)
-            {
-                loadFeedback.PlayFeedbacks();
-                ramping = true;
+
+            if (!this.ramping) {
+                this.loadFeedback.PlayFeedbacks();
+                this.ramping = true;
             }
             //Probably should also rotate the player if they click in a
             // different direction to that in which they are going.
-        }else
-        {
-            ramping = false;
-            loadFeedback.StopFeedbacks();
+        } else {
+            this.ramping = false;
+            this.loadFeedback.StopFeedbacks();
         }
     }
 
@@ -93,8 +92,7 @@ public class PlayerController : Shooter {
         }
     }
 
-    public void FishBomb()
-    {
+    public void FishBomb() {
         Projectile projectile = Instantiate(this.fishBomb.gameObject, base.firePoint.position, Quaternion.identity).GetComponent<Projectile>();
         projectile.Init(this.gameObject.layer, this.cam.ScreenToWorldPoint(Input.mousePosition), base.shootRange * 1.5f, base.projectileSpeed / 2, base.damage * 2);
     }

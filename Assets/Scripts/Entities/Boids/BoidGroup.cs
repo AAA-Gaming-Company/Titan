@@ -9,9 +9,9 @@ public class BoidGroup : MonoBehaviour {
     public BoidSettings settings;
     public ComputeShader compute;
 
-    private Boid[] boids;
+    private Boid[] boids = null;
 
-    private void Start() {
+    public void Spawn() {
         this.boids = new Boid[this.flockSize];
 
         float spreadFactor = this.flockSize * 0.2f;
@@ -21,7 +21,6 @@ public class BoidGroup : MonoBehaviour {
             Vector3 spawnPos = base.transform.position;
             spawnPos.x += Random.Range(-spreadFactor, spreadFactor);
             spawnPos.y += Random.Range(-spreadFactor, spreadFactor);
-            spawnPos.z += Random.Range(0, 2) == 0 ? -2 : 2; //This will give either -2 or 2, but not in between
 
             Boid boid = Instantiate(this.boidPrefab, spawnPos, Quaternion.identity).GetComponent<Boid>();
 
@@ -34,6 +33,10 @@ public class BoidGroup : MonoBehaviour {
     }
 
     private void Update() {
+        if (this.boids == null) {
+            return;
+        }
+
         int numBoids = this.boids.Length;
         BoidData[] boidData = new BoidData[numBoids];
 
@@ -81,6 +84,14 @@ public class BoidGroup : MonoBehaviour {
                 counter++;
             }
         }
+    }
+
+    public void Kill() {
+        for (int i = 0; i < this.boids.Length; i++) {
+            Destroy(this.boids[i]);
+        }
+        this.boids = null;
+        Destroy(base.gameObject);
     }
 
     public struct BoidData {
