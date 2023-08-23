@@ -7,6 +7,7 @@ public class PlayerController : Shooter {
     [Header("Player")]
     public float playerSpeed;
     public GameObject spotLight;
+    public GameObject fishBomb;
     public MMF_Player moveFeedback;
     public MMF_Player shootFeedback;
     public MMF_Player loadFeedback;
@@ -90,6 +91,12 @@ public class PlayerController : Shooter {
             this.shootFeedback.PlayFeedbacks();
             this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
         }
+    }
+
+    public void FishBomb()
+    {
+        Projectile projectile = Instantiate(this.fishBomb.gameObject, base.firePoint.position, Quaternion.identity).GetComponent<Projectile>();
+        projectile.Init(this.gameObject.layer, this.cam.ScreenToWorldPoint(Input.mousePosition), base.shootRange * 1.5f, base.projectileSpeed / 2, base.damage * 2);
     }
 
     protected override void OnDie() { //Ignore

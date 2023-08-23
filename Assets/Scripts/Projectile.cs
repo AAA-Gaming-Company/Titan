@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public abstract class Projectile : MonoBehaviour {
     private bool ready = false;
 
     private Vector2 finalPosition;
@@ -44,6 +44,7 @@ public class Projectile : MonoBehaviour {
             if (c != null && c.gameObject.layer != this.ignoreLayer) {
                 Entity entity = c.GetComponent<Entity>();
                 if (entity != null) {
+                    HitFunction();
                     entity.TakeDamage(this.damageDealt);
                     Destroy(base.gameObject);
                     return;
@@ -53,7 +54,10 @@ public class Projectile : MonoBehaviour {
 
         //If we've got to the final position, then destroy
         if (base.transform.position.x == this.finalPosition.x && base.transform.position.y == this.finalPosition.y) {
+
             Destroy(base.gameObject);
         }
     }
+
+    public abstract void HitFunction();
 }
