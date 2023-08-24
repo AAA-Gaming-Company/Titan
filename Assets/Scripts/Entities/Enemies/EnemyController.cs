@@ -10,13 +10,16 @@ public class EnemyController : Shooter {
     public float moveRange;
     public LayerMask playerLayer;
     public MMF_Player shoot;
+    public int healthBoostOnDeath;
 
     private AIDestinationSetter destinationSetter;
     private AIPath aiPath;
+    private PlayerController player;
 
     protected override void EntityStart() {
         destinationSetter = GetComponent<AIDestinationSetter>();
         aiPath = GetComponent<AIPath>();
+        player = destinationSetter.target.GetComponent<PlayerController>();
     }
 
     private void Update() {
@@ -49,7 +52,8 @@ public class EnemyController : Shooter {
         }
     }
 
-    protected override void OnDie() { //Ignore
+    protected override void OnDie() {
+        player.Heal(healthBoostOnDeath);
     }
 
     protected override void OnDamage(int amount) {

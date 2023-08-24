@@ -96,7 +96,16 @@ public class PlayerController : Shooter {
         Projectile projectile = Instantiate(this.fishBomb.gameObject, base.firePoint.position, Quaternion.identity).GetComponent<Projectile>();
         projectile.Init(this.gameObject.layer, this.cam.ScreenToWorldPoint(Input.mousePosition), base.shootRange * 1.5f, base.projectileSpeed / 2, base.damage * 2);
     }
+    public void Heal(int amount)
+    {
+        currentHP += amount;
+        Mathf.Clamp(currentHP, 0, maxHP);
+        float h, s, v;
+        Color.RGBToHSV(this.window.color, out h, out s, out v);
+        v += hpIncrement * amount;
 
+        this.window.color = Color.HSVToRGB(h, s, v);
+    }
     protected override void OnDie() { //Ignore
     }
 

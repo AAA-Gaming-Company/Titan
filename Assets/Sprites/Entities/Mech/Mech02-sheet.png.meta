@@ -115,7 +115,301 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Mech02-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 6606
+        width: 2644
+        height: 2590
+      alignment: 9
+      pivot: {x: 0.4640989, y: 0.4909762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e23cdec09f9a541a53b9113c191e82
+      internalID: 1965891067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 6578
+        width: 2618
+        height: 2590
+      alignment: 9
+      pivot: {x: 0.468501, y: 0.50723654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82019eae2ff1a0446bb8a4ba7012644f
+      internalID: -100608973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 5925
+        y: 6551
+        width: 2428
+        height: 2672
+      alignment: 9
+      pivot: {x: 0.46912384, y: 0.49438897}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e668100e2f37743afcf2e0f14963a4
+      internalID: 531918679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 8678
+        y: 6606
+        width: 2129
+        height: 2630
+      alignment: 9
+      pivot: {x: 0.44542074, y: 0.4714955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05470174b73dcb54c9e9cddcff5324bc
+      internalID: -1731733080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 11038
+        y: 6551
+        width: 2020
+        height: 2672
+      alignment: 9
+      pivot: {x: 0.5055674, y: 0.4831662}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b11861f30b60041806e51007217db4
+      internalID: -1838744003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 13404
+        y: 6588
+        width: 2007
+        height: 2658
+      alignment: 9
+      pivot: {x: 0.5093389, y: 0.5239743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7d9cac05a9dac43a5035d2d877e7e9
+      internalID: 1035138511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 3636
+        width: 2536
+        height: 2753
+      alignment: 9
+      pivot: {x: 0.5, y: 0.40318322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924af2c5e0337614b9c56d6903af971a
+      internalID: -1246891580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2915
+        y: 3826
+        width: 2292
+        height: 2590
+      alignment: 9
+      pivot: {x: 0.49147394, y: 0.37709093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e1227e61bae1f42a16e8a831be2c6e
+      internalID: -985523422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 5898
+        y: 3717
+        width: 2238
+        height: 2577
+      alignment: 9
+      pivot: {x: 0.42664915, y: 0.4891936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d29b833c5edcd84fbf5fc36eed713be
+      internalID: 1816503580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 8759
+        y: 3636
+        width: 1953
+        height: 2685
+      alignment: 9
+      pivot: {x: 0.4387836, y: 0.5456833}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a9c63d396a61f4db65797140dbe023
+      internalID: -2094575457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 11071
+        y: 3629
+        width: 1980
+        height: 2725
+      alignment: 9
+      pivot: {x: 0.4960676, y: 0.5371468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d8663d86a4ba94db0b3c0ed8d22486
+      internalID: -1405997273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 13506
+        y: 3704
+        width: 2305
+        height: 2752
+      alignment: 9
+      pivot: {x: 0.48495245, y: 0.48874682}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b292b2f02cac977489f710e4839745ee
+      internalID: 1661526245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 395
+        width: 2468
+        height: 3024
+      alignment: 9
+      pivot: {x: 0.47786897, y: 0.5057038}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c4768c11751a14c9cfa704ed364d39
+      internalID: -784787552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mech02-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3037
+        y: 530
+        width: 2631
+        height: 2875
+      alignment: 9
+      pivot: {x: 0.48202342, y: 0.47212467}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4071fdfa455984ca493b1be450a42a
+      internalID: 276457444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +420,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mech02-sheet_0: 1965891067
+      Mech02-sheet_1: -100608973
+      Mech02-sheet_10: -1405997273
+      Mech02-sheet_11: 1661526245
+      Mech02-sheet_12: -784787552
+      Mech02-sheet_13: 276457444
+      Mech02-sheet_2: 531918679
+      Mech02-sheet_3: -1731733080
+      Mech02-sheet_4: -1838744003
+      Mech02-sheet_5: 1035138511
+      Mech02-sheet_6: -1246891580
+      Mech02-sheet_7: -985523422
+      Mech02-sheet_8: 1816503580
+      Mech02-sheet_9: -2094575457
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

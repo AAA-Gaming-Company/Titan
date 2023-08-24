@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
+  radius: 0.68
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 879fcd88e43fe45c3b56a211ffa8ffe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 600
+  maxHP: 400
   damageFeedback: {fileID: 4972001248007956576}
   deathFeedback: {fileID: 2217104390011516773}
   currentHP: 0
@@ -863,6 +863,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   shoot: {fileID: 2792630510481573578}
+  healthBoostOnDeath: 70
 --- !u!95 &6403719795699428290
 Animator:
   serializedVersion: 5
