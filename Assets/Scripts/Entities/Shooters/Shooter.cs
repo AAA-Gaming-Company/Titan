@@ -22,7 +22,7 @@ public abstract class Shooter : Entity {
         Projectile projectile = Instantiate(this.weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity).GetComponent<Projectile>();
         projectile.Init(this.gameObject.layer, targetPos, this.weapon.shootRange, this.weapon.projectileSpeed, this.weapon.damage);
 
-        StartCoroutine(this.Reload());
+        StartCoroutine(this.Reload(this.weapon));
 
         return projectile;
     }
@@ -35,9 +35,9 @@ public abstract class Shooter : Entity {
         return this.weapon.shootRange;
     }
 
-    private IEnumerator Reload() {
-        this.weapon.ready = false;
+    private IEnumerator Reload(WeaponType weapon) {
+        weapon.ready = false;
         yield return new WaitForSeconds(this.weapon.shootDelay);
-        this.weapon.ready = true;
+        weapon.ready = true;
     }
 }
