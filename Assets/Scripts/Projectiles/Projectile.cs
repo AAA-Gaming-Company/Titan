@@ -5,9 +5,9 @@ public abstract class Projectile : MonoBehaviour {
 
     private Vector2 finalPosition;
     private float maxSpeed;
-    private int damageDealt;
     private int ignoreLayer;
 
+    public int damageDealt;
     public ContactFilter2D filter2D;
     public bool player;
 

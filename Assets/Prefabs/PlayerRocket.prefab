@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7072366838509886119}
   - component: {fileID: -7352851995455684913}
   - component: {fileID: -8921068940928193615}
-  - component: {fileID: 2862709290900615101}
+  - component: {fileID: 4441316107912424911}
   m_Layer: 0
-  m_Name: PlayerProjectile
+  m_Name: PlayerRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2436504766794875610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.998, y: 0.402, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.028726578, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2862709290900615101
+--- !u!114 &4441316107912424911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2436504766794875610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db58e75a711100d4fb246fa1dad4eccc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1998734f5267b6c479c242e9fdf81e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageDealt: 0
   filter2D:
     useTriggers: 0
     useLayerMask: 0
@@ -160,4 +161,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  player: 1
+  player: 0
+  range: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512

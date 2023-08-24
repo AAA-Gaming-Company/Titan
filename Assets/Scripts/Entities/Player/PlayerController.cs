@@ -3,14 +3,12 @@ using MoreMountains.Feedbacks;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
-public class PlayerController : Shooter {
+public class PlayerController : MultipleShooter {
     [Header("Player")]
     public float playerSpeed;
     public GameObject spotLight;
-    public GameObject fishBomb;
     public MMF_Player moveFeedback;
     public MMF_Player shootFeedback;
-    public MMF_Player loadFeedback;
     public SpriteRenderer window;
 
     private Rigidbody2D rb;
@@ -20,15 +18,19 @@ public class PlayerController : Shooter {
     private float hpIncrement = 0;
     private bool isPlayingMove = false;
     private Camera cam;
-    private bool ramping = false;
 
     protected override void EntityStart() {
         this.rb = GetComponent<Rigidbody2D>();
         this.cam = Camera.main;
-
+        base.SwitchWeapons(0);
         float h, s, v;
         Color.RGBToHSV(this.window.color, out h, out s, out v);
         this.hpIncrement = v / base.maxHP ;
+
+        foreach (WeaponType weapon in base.weaponTypes)
+        {
+            weapon.ready = true;
+        }
     }
 
     private void FixedUpdate() {
@@ -39,16 +41,17 @@ public class PlayerController : Shooter {
 
         if (Input.GetMouseButton(0)) {
             this.Hit();
-
-            if (!this.ramping) {
-                this.loadFeedback.PlayFeedbacks();
-                this.ramping = true;
-            }
             //Probably should also rotate the player if they click in a
             // different direction to that in which they are going.
-        } else {
-            this.ramping = false;
-            this.loadFeedback.StopFeedbacks();
+        } 
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            base.SwitchWeapons(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            base.SwitchWeapons(1);
         }
     }
 
@@ -92,10 +95,6 @@ public class PlayerController : Shooter {
         }
     }
 
-    public void FishBomb() {
-        Projectile projectile = Instantiate(this.fishBomb.gameObject, base.firePoint.position, Quaternion.identity).GetComponent<Projectile>();
-        projectile.Init(this.gameObject.layer, this.cam.ScreenToWorldPoint(Input.mousePosition), base.shootRange * 1.5f, base.projectileSpeed / 2, base.damage * 2);
-    }
     public void Heal(int amount)
     {
         currentHP += amount;

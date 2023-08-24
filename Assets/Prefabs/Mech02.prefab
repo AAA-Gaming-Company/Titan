@@ -493,7 +493,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 11065446854282063, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
   shootDelay: 20
   projectileSpeed: 3
-  amount: 10
+  amount: 20
   shootRange: 40
   firePoint: {fileID: 813400348708640719}
 --- !u!1 &2632810046920209757
