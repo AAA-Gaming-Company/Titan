@@ -11,12 +11,9 @@ public abstract class Entity : MonoBehaviour {
     public int currentHP;
     private bool dead = false;
 
-    protected void Start() {
+    public void Start() {
         this.currentHP = this.maxHP;
-        this.EntityStart();
     }
-
-    protected abstract void EntityStart();
 
     public void TakeDamage(int amount) {
         this.OnDamage(amount);

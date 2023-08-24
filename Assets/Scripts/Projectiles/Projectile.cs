@@ -9,7 +9,6 @@ public abstract class Projectile : MonoBehaviour {
 
     public int damageDealt;
     public ContactFilter2D filter2D;
-    public bool player;
 
     public void Init(int ignoreLayer, Vector2 targetPos, float range, float speed, int damage) {
         this.ignoreLayer = ignoreLayer;

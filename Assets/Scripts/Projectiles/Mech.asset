@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
-  m_Name: Normal
+  m_Name: Mech
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2862709290900615101, guid: 47cd6c965d854e647bd2c519f8efaea5, type: 3}
-  shootDelay: 0.15
-  projectileSpeed: 0.5
+  prefab: {fileID: 7166574031802194186, guid: 91dc96aeb993842bb96471fd3b4ffc66, type: 3}
+  shootDelay: 0.4
+  projectileSpeed: 0.2
   shootRange: 30
   damage: 10
   ready: 1

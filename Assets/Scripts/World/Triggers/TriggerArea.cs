@@ -1,7 +1,13 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
+
 public abstract class TriggerArea : MonoBehaviour {
     public bool destroyOnTrigger;
+
+    private void Start() {
+        this.GetComponent<Collider2D>().isTrigger = true;
+    }
 
     protected abstract void TriggerAction();
 

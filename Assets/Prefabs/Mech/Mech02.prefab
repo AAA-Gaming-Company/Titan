@@ -143,10 +143,9 @@ GameObject:
   - component: {fileID: 813400348708640715}
   - component: {fileID: 813400348708640712}
   - component: {fileID: 813400348708640713}
-  - component: {fileID: 813400348708640718}
+  - component: {fileID: 4334805993133554498}
   - component: {fileID: 813400348708640689}
   - component: {fileID: 6145547661467847962}
-  - component: {fileID: 6033290615712290949}
   m_Layer: 9
   m_Name: Mech02
   m_TagString: Enemy
@@ -322,7 +321,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05157852, y: 0.23841286}
+  m_Offset: {x: -0.13411903, y: 0.064481735}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.4640989, y: 0.4909762}
@@ -333,7 +332,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4987335, y: 1.4760475}
+  m_Size: {x: 2.5921707, y: 2.4563332}
   m_EdgeRadius: 0
 --- !u!50 &813400348708640713
 Rigidbody2D:
@@ -356,7 +355,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &813400348708640718
+--- !u!114 &4334805993133554498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,25 +364,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 813400348708640710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 879fcd88e43fe45c3b56a211ffa8ffe6, type: 3}
+  m_Script: {fileID: 11500000, guid: ff6f95e38b16443aab2bf52602a23f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 900
   damageFeedback: {fileID: 3601811875616835361}
   deathFeedback: {fileID: 5572059695467744022}
   currentHP: 0
-  projectilePrefab: {fileID: 7166574031802194186, guid: 91dc96aeb993842bb96471fd3b4ffc66, type: 3}
-  shootDelay: 0.4
-  projectileSpeed: 0.15
-  shootRange: 35
+  weapon: {fileID: 11400000, guid: 36dfa0833ae8c44acb9a2423d57d9ebe, type: 2}
   firePoint: {fileID: 813400348708640719}
-  damage: 10
   moveRange: 28.37
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
   shoot: {fileID: 8455007817732209337}
   healthBoostOnDeath: 100
+  shieldRadius: 8.53
 --- !u!95 &813400348708640689
 Animator:
   serializedVersion: 5
@@ -478,24 +474,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   StartShakingButton: 0
---- !u!114 &6033290615712290949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813400348708640710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e61b1aa7316d24f8bc270766b990d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 11065446854282063, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
-  shootDelay: 20
-  projectileSpeed: 3
-  amount: 20
-  shootRange: 40
-  firePoint: {fileID: 813400348708640719}
 --- !u!1 &2632810046920209757
 GameObject:
   m_ObjectHideFlags: 0

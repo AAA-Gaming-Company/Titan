@@ -192,7 +192,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07001686, y: -0.029043198}
+  m_Offset: {x: -0.073755264, y: -0.029043198}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -203,7 +203,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5360069, y: 0.5580864}
+  m_Size: {x: 0.54327774, y: 0.5580864}
   m_EdgeRadius: 0
 --- !u!50 &11065446854282061
 Rigidbody2D:
@@ -242,12 +242,8 @@ MonoBehaviour:
   damageFeedback: {fileID: 4342304364076402041}
   deathFeedback: {fileID: 5061314243263109010}
   currentHP: 0
-  projectilePrefab: {fileID: 7166574031802194186, guid: 91dc96aeb993842bb96471fd3b4ffc66, type: 3}
-  shootDelay: 1
-  projectileSpeed: 0.2
-  shootRange: 3
+  weapon: {fileID: 11400000, guid: 3e32fd2832d7a4a9f9733978d5525475, type: 2}
   firePoint: {fileID: 11065446854282059}
-  damage: 10
   moveRange: 3
   playerLayer:
     serializedVersion: 2

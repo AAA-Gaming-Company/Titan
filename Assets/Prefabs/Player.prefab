@@ -5413,11 +5413,11 @@ MonoBehaviour:
   damageFeedback: {fileID: 1849453183390349461}
   deathFeedback: {fileID: 0}
   currentHP: 0
+  weapon: {fileID: 11400000, guid: d1ce6812d94b5934cb0a0b61209d1002, type: 2}
+  firePoint: {fileID: 1147709300549078244}
   weaponTypes:
   - {fileID: 11400000, guid: d1ce6812d94b5934cb0a0b61209d1002, type: 2}
   - {fileID: 11400000, guid: ea9fa78234fd4694081b975a91fa1f16, type: 2}
-  activeWeapon: {fileID: 11400000, guid: d1ce6812d94b5934cb0a0b61209d1002, type: 2}
-  firePoint: {fileID: 1147709300549078244}
   playerSpeed: 10
   spotLight: {fileID: 1147709301361158736}
   moveFeedback: {fileID: 1147709299948475870}

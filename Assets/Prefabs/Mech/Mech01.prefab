@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 6403719795699428280}
   - component: {fileID: 6403719795699428283}
   - component: {fileID: 6403719795699428282}
-  - component: {fileID: 6403719795699428285}
+  - component: {fileID: 4381636464446583285}
   - component: {fileID: 6403719795699428290}
   - component: {fileID: 494847847418442089}
   m_Layer: 9
@@ -802,7 +802,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010966837, y: -0.0036555827}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -813,7 +813,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.55849016, y: 0.5511789}
   m_EdgeRadius: 0
 --- !u!50 &6403719795699428282
 Rigidbody2D:
@@ -836,7 +836,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6403719795699428285
+--- !u!114 &4381636464446583285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -845,25 +845,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 6403719795699428277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 879fcd88e43fe45c3b56a211ffa8ffe6, type: 3}
+  m_Script: {fileID: 11500000, guid: ff6f95e38b16443aab2bf52602a23f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 400
   damageFeedback: {fileID: 4972001248007956576}
   deathFeedback: {fileID: 2217104390011516773}
   currentHP: 0
-  projectilePrefab: {fileID: 7166574031802194186, guid: 91dc96aeb993842bb96471fd3b4ffc66, type: 3}
-  shootDelay: 0.4
-  projectileSpeed: 0.1
-  shootRange: 14
+  weapon: {fileID: 11400000, guid: 36dfa0833ae8c44acb9a2423d57d9ebe, type: 2}
   firePoint: {fileID: 6403719795699428284}
-  damage: 10
   moveRange: 12
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
   shoot: {fileID: 2792630510481573578}
   healthBoostOnDeath: 70
+  shieldRadius: 2.28
 --- !u!95 &6403719795699428290
 Animator:
   serializedVersion: 5

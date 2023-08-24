@@ -19,18 +19,15 @@ public class PlayerController : MultipleShooter {
     private bool isPlayingMove = false;
     private Camera cam;
 
-    protected override void EntityStart() {
+    public new void Start() {
+        base.Start();
+
         this.rb = GetComponent<Rigidbody2D>();
         this.cam = Camera.main;
-        base.SwitchWeapons(0);
+
         float h, s, v;
         Color.RGBToHSV(this.window.color, out h, out s, out v);
         this.hpIncrement = v / base.maxHP ;
-
-        foreach (WeaponType weapon in base.weaponTypes)
-        {
-            weapon.ready = true;
-        }
     }
 
     private void FixedUpdate() {
@@ -38,25 +35,25 @@ public class PlayerController : MultipleShooter {
         this.inputY = Input.GetAxis("Vertical");
 
         this.rb.AddForce(new Vector2(this.inputX * this.playerSpeed, this.inputY * this.playerSpeed));
-
-        if (Input.GetMouseButton(0)) {
-            this.Hit();
-            //Probably should also rotate the player if they click in a
-            // different direction to that in which they are going.
-        } 
-
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            base.SwitchWeapons(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            base.SwitchWeapons(1);
-        }
     }
 
     private void Update() {
         this.UpdatePlayerSprite();
+
+        //Weapon use
+        if (Input.GetMouseButton(0)) {
+            this.Hit();
+            //Probably should also rotate the player if they click in a
+            // different direction to that in which they are going.
+        }
+
+        //Weapon switching
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) {
+            base.SwitchWeapons(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2)) {
+            base.SwitchWeapons(1);
+        }
 
         //Play and pause engine depending on if the player is moving.
         //We use the absolute value of the velocity because velocity could be negative.

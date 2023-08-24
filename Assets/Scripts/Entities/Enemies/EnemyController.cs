@@ -16,14 +16,16 @@ public class EnemyController : Shooter {
     private AIPath aiPath;
     private PlayerController player;
 
-    protected override void EntityStart() {
+    public new void Start() {
+        base.Start();
+
         destinationSetter = GetComponent<AIDestinationSetter>();
         aiPath = GetComponent<AIPath>();
         player = destinationSetter.target.GetComponent<PlayerController>();
     }
 
     private void Update() {
-        if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.shootRange && CanHitPlayer()) {
+        if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
             this.Shoot(this.destinationSetter.target.position);
             shoot.PlayFeedbacks();
         }
