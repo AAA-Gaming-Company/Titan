@@ -122,13 +122,13 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 3280746414523547668
-  - rid: 3280746414523547669
-  - rid: 3280746414523547670
-  - rid: 3280746414523547671
-  - rid: 3280746414523547672
-  - rid: 3280746414523547673
-  - rid: 3280746422277242881
+  - rid: 3280746422277242882
+  - rid: 3280746422277242883
+  - rid: 3280746422277242884
+  - rid: 3280746422277242885
+  - rid: 3280746422277242886
+  - rid: 3280746422277242887
+  - rid: 3280746422277242888
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   StopFeedbacksOnDisable: 0
@@ -136,11 +136,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 3280746414523547668
+    - rid: 3280746422277242882
       type: {class: MMF_CameraOrthographicSize, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: 1444897071
+        UniqueID: 210171697
         Label: Orthographic Size
         ChannelMode: 0
         Channel: 0
@@ -261,11 +261,11 @@ MonoBehaviour:
           m_RotationOrder: 4
         RemapOrthographicSizeZero: 8.75
         RemapOrthographicSizeOne: 6
-    - rid: 3280746414523547669
+    - rid: 3280746422277242883
       type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
       data:
         Active: 1
-        UniqueID: 251328104
+        UniqueID: 281790569
         Label: Sound
         ChannelMode: 0
         Channel: 0
@@ -379,11 +379,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 3280746414523547670
+    - rid: 3280746422277242884
       type: {class: MMF_Scale, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: -898006002
+        UniqueID: 1254684747
         Label: Scale
         ChannelMode: 0
         Channel: 0
@@ -607,11 +607,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 3280746414523547671
+    - rid: 3280746422277242885
       type: {class: MMF_Sound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
       data:
         Active: 1
-        UniqueID: -1441142806
+        UniqueID: -799384431
         Label: Sound
         ChannelMode: 0
         Channel: 0
@@ -725,11 +725,11 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    - rid: 3280746414523547672
+    - rid: 3280746422277242886
       type: {class: MMF_CinemachineImpulse, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.Cinemachine}
       data:
         Active: 1
-        UniqueID: -1306552466
+        UniqueID: -812392815
         Label: Cinemachine Impulse
         ChannelMode: 0
         Channel: 0
@@ -835,11 +835,11 @@ MonoBehaviour:
           m_PropagationSpeed: 343
         Velocity: {x: 6, y: 6, z: 0}
         ClearImpulseOnStop: 0
-    - rid: 3280746414523547673
+    - rid: 3280746422277242887
       type: {class: MMF_Events, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: 1230505294
+        UniqueID: 401006879
         Label: Unity Events
         ChannelMode: 0
         Channel: 0
@@ -927,11 +927,11 @@ MonoBehaviour:
         ResetEvents:
           m_PersistentCalls:
             m_Calls: []
-    - rid: 3280746422277242881
+    - rid: 3280746422277242888
       type: {class: MMF_Property, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
       data:
         Active: 1
-        UniqueID: -1577063938
+        UniqueID: 908259279
         Label: Property
         ChannelMode: 0
         Channel: 0
@@ -1070,7 +1070,7 @@ MonoBehaviour:
             m_RotationOrder: 4
           Initialized: 0
         RemapLevelZero: 0
-        RemapLevelOne: 15
+        RemapLevelOne: 40
         InstantLevel: 0
         ToDestinationLevel: 5
 --- !u!1 &1662909389
@@ -6488,9 +6488,9 @@ MonoBehaviour:
   deathFeedback: {fileID: 0}
   currentHP: 0
   projectilePrefab: {fileID: 754043654248159706, guid: 47cd6c965d854e647bd2c519f8efaea5, type: 3}
-  shootDelay: 0.15
+  shootDelay: 0.1
   projectileSpeed: 0.25
-  shootRange: 12
+  shootRange: 30
   firePoint: {fileID: 1147709300549078244}
   damage: 10
   playerSpeed: 10
