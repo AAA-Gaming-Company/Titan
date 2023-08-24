@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
-  m_Name: Rocket
+  m_Name: MegaMech
   m_EditorClassIdentifier: 
-  useDelay: 3
-  useRange: 20
+  useDelay: 1
+  useRange: 70
   isSpawner: 1
-  prefab: {fileID: 2436504766794875610, guid: b43934faf8169c745a61d869b5ec42a6, type: 3}
-  isProjectile: 1
-  projectileSpeed: 0.2
-  shootRange: 20
-  damage: 20
-  isPathfidner: 0
+  prefab: {fileID: 11065446854282050, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
+  isProjectile: 0
+  projectileSpeed: 0
+  damage: 0
+  isPathfidner: 1
   ready: 1

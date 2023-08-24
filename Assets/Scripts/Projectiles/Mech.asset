@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
   m_Name: Mech
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7166574031802194186, guid: 91dc96aeb993842bb96471fd3b4ffc66, type: 3}
-  shootDelay: 0.4
+  useDelay: 0.4
+  useRange: 30
+  isSpawner: 1
+  prefab: {fileID: 2436504766794875610, guid: 91dc96aeb993842bb96471fd3b4ffc66, type: 3}
+  isProjectile: 1
   projectileSpeed: 0.2
   shootRange: 30
   damage: 10
+  isPathfidner: 0
   ready: 1

@@ -21,8 +21,7 @@ public class SpawnTriggerArea : TriggerArea {
             newObject.transform.position = pos;
 
             //AI Destination
-            if (this.hasAiDestination)
-            {
+            if (this.hasAiDestination) {
                 AIDestinationSetter aiDestinationSetter = newObject.GetComponent<AIDestinationSetter>();
                 aiDestinationSetter.target = this.aiDestination;
             }

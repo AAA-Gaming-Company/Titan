@@ -2,11 +2,21 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Assets", menuName = "Scriptable Objects/Weapon Type")]
 public class WeaponType : ScriptableObject {
-    public Projectile prefab;
-    public float shootDelay;
-    public float projectileSpeed = 2f;
-    public float shootRange;
-    public int damage;
+    public float useDelay = 1;
+    public float useRange = 15;
 
-    public bool ready; //This could cause issues if 2 things use the same type at once. To be tested!
+    [Header("Spawner")]
+    public bool isSpawner = false;
+    public GameObject prefab;
+
+    [Header("Projectile")]
+    public bool isProjectile = false;
+    public float projectileSpeed = 0.5f;
+    public int damage = 10;
+
+    [Header("Pathfinding")]
+    public bool isPathfidner = false;
+
+    [Header("Internal")]
+    public bool ready;
 }

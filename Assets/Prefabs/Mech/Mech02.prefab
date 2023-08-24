@@ -371,7 +371,7 @@ MonoBehaviour:
   damageFeedback: {fileID: 3601811875616835361}
   deathFeedback: {fileID: 5572059695467744022}
   currentHP: 0
-  weapon: {fileID: 11400000, guid: 36dfa0833ae8c44acb9a2423d57d9ebe, type: 2}
+  weapon: {fileID: 11400000, guid: 9ce3ba0a99fd5443bb500ef006662abc, type: 2}
   firePoint: {fileID: 813400348708640719}
   moveRange: 28.37
   playerLayer:

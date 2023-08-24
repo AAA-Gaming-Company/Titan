@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2862709290900615101, guid: 47cd6c965d854e647bd2c519f8efaea5, type: 3}
-  shootDelay: 0.15
+  useDelay: 0.15
+  useRange: 30
+  isSpawner: 1
+  prefab: {fileID: 2436504766794875610, guid: 47cd6c965d854e647bd2c519f8efaea5, type: 3}
+  isProjectile: 1
   projectileSpeed: 0.5
   shootRange: 30
   damage: 10
+  isPathfidner: 0
   ready: 1
