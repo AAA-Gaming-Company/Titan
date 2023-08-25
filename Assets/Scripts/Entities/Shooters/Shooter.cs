@@ -21,16 +21,23 @@ public abstract class Shooter : Entity {
         }
 
         if (this.weapon.isSpawner) {
-            GameObject newObject = Instantiate(this.weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
-
-            if (this.weapon.isProjectile) {
-                Projectile projectile = newObject.GetComponent<Projectile>();
-                projectile.Init(this.gameObject.layer, targetPos, this.weapon.useRange, this.weapon.projectileSpeed, this.weapon.damage);
+            int amount = this.weapon.amount[0];
+            if (this.weapon.amount.Length > 1) {
+                amount = this.weapon.amount[GameManager.difficultyLevel];
             }
 
-            if (this.weapon.isPathfidner) {
-                AIDestinationSetter path = newObject.GetComponent<AIDestinationSetter>();
-                path.target = this.gameObject.GetComponent<AIDestinationSetter>().target;
+            for (int i = 0; i < amount; i++) {
+                GameObject newObject = Instantiate(this.weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
+
+                if (this.weapon.isProjectile) {
+                    Projectile projectile = newObject.GetComponent<Projectile>();
+                    projectile.Init(this.gameObject.layer, targetPos, this.weapon.useRange, this.weapon.projectileSpeed, this.weapon.damage);
+                }
+
+                if (this.weapon.isPathfidner) {
+                    AIDestinationSetter path = newObject.GetComponent<AIDestinationSetter>();
+                    path.target = this.gameObject.GetComponent<AIDestinationSetter>().target;
+                }
             }
         } else {
             if (this.weapon.isPathfidner || this.weapon.isProjectile) {

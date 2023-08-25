@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
   m_Name: MegaMech
   m_EditorClassIdentifier: 
-  useDelay: 1
+  useDelay: 20
   useRange: 70
   isSpawner: 1
   prefab: {fileID: 11065446854282050, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
+  amount: 0a0000001400000028000000
   isProjectile: 0
   projectileSpeed: 0
   damage: 0

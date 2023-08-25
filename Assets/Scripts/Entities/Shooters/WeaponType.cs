@@ -8,6 +8,7 @@ public class WeaponType : ScriptableObject {
     [Header("Spawner")]
     public bool isSpawner = false;
     public GameObject prefab;
+    public int[] amount = { 1 };
 
     [Header("Projectile")]
     public bool isProjectile = false;
