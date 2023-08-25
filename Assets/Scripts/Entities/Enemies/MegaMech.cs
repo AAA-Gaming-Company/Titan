@@ -17,7 +17,7 @@ public class MegaMech : EnemyController {
         GameObject shield = new GameObject();
         shield.name = "Shield";
         shield.transform.parent = this.transform;
-        shield.transform.localPosition = Vector3.zero;
+        shield.transform.localPosition = new Vector3(0, 0, -2);
         shield.transform.localScale = Vector3.one;
 
         CircleCollider2D collier = shield.AddComponent<CircleCollider2D>();
@@ -36,6 +36,7 @@ public class MegaMech : EnemyController {
         if (this.immune || this.stunned) {
             return;
         }
+
         this.immune = true;
         this.shieldRenderer.sprite = this.shield;
 
@@ -46,6 +47,7 @@ public class MegaMech : EnemyController {
         if (!this.immune) {
             return;
         }
+
         this.immune = false;
         this.shieldRenderer.sprite = null;
     }
@@ -55,17 +57,23 @@ public class MegaMech : EnemyController {
         this.RetractShield();
     }
 
-    private IEnumerator Stun()
-    {
-        RetractShield();
-        stunned = true;
-        yield return new WaitForSeconds(stunDuration);
-        stunned = false;
+    public void Stun() {
+        if (this.stunned) {
+            return;
+        }
+
+        this.stunned = true;
+        this.RetractShield();
+        StartCoroutine(this.StunCooldown());
     }
-    protected override void OnDamage(int amount)
-    {
+
+    private IEnumerator StunCooldown() {
+        yield return new WaitForSeconds(this.stunDuration);
+        this.stunned = false;
+    }
+
+    protected new void OnDamage(int amount) {
         base.OnDamage(amount); //In this case I think it's redundant, but whatever
-        StartCoroutine(Stun());
     }
 
     [RequireComponent(typeof(Collider2D))]
@@ -73,8 +81,13 @@ public class MegaMech : EnemyController {
         public MegaMech megaMech; //If this were java, I would use no accessor, but it isn't
 
         private void OnTriggerEnter2D(Collider2D collision) {
-            if (collision.gameObject.tag == "PlayerProjectile") {
-                this.megaMech.DeployShield();
+            if (collision.gameObject.tag != "PlayerProjectile") {
+                return;
+            }
+
+            this.megaMech.DeployShield();
+            if (this.megaMech.immune) {
+                Destroy(collision.gameObject);
             }
         }
     }
