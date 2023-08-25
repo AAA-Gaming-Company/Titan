@@ -24,6 +24,10 @@ public class MenuScript : MonoBehaviour {
 
     private Camera cam;
 
+    private void Awake() {
+        Time.timeScale = 1f;
+    }
+
     private void Start() {
         this.playButton.onClick.AddListener(this.ClickPlay);
         this.creditsButton.onClick.AddListener(this.ClickCredits);
