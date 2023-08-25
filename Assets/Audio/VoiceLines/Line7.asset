@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e75fe222b88e468a938f1e452080ccf, type: 3}
   m_Name: Line7
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  transcription: 
-  displayTime: 0
+  clip: {fileID: 8300000, guid: 97d31ab6f0a82aa46a245a03ca693015, type: 3}
+  transcription: Command, it's worth noting that the fish in this area appear to
+    be emitting a radiant glow and displaying an oddly amicable behavior.
+  displayTime: 6.2
