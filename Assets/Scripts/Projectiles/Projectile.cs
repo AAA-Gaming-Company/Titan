@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour {
     private bool ready = false;
+    private static int wallLayer = -1;
 
     private Vector2 finalPosition;
     private float maxSpeed;
@@ -9,6 +10,15 @@ public abstract class Projectile : MonoBehaviour {
 
     public int damageDealt;
     public ContactFilter2D filter2D;
+
+    private static void FindWallLayer() {
+        if (Projectile.wallLayer == -1) {
+            Projectile.wallLayer = LayerMask.NameToLayer("Walls");
+            if (Projectile.wallLayer == -1) {
+                throw new UnityException("No layer found for the walls!");
+            }
+        }
+    }
 
     public void Init(int ignoreLayer, Vector2 targetPos, float range, float speed, int damage) {
         this.ignoreLayer = ignoreLayer;
@@ -27,6 +37,7 @@ public abstract class Projectile : MonoBehaviour {
 
         //Call last
         this.ready = true;
+        Projectile.FindWallLayer();
     }
 
     private void FixedUpdate() {
@@ -40,13 +51,19 @@ public abstract class Projectile : MonoBehaviour {
         base.gameObject.GetComponent<BoxCollider2D>().OverlapCollider(this.filter2D, hit);
 
         foreach (Collider2D c in hit) {
-            if (c != null && c.gameObject.layer != this.ignoreLayer) {
-                Entity entity = c.GetComponent<Entity>();
-                if (entity != null) {
-                    HitFunction();
-                    entity.TakeDamage(this.damageDealt);
+            if (c != null) {
+
+                if (c.gameObject.layer != this.ignoreLayer) {
+                    Entity entity = c.GetComponent<Entity>();
+                    if (entity != null) {
+                        this.HitFunction();
+                        entity.TakeDamage(this.damageDealt);
+                        Destroy(base.gameObject);
+                        return;
+                    }
+                } else if (c.gameObject.layer == Projectile.wallLayer) {
+                    this.HitFunction();
                     Destroy(base.gameObject);
-                    return;
                 }
             }
         }

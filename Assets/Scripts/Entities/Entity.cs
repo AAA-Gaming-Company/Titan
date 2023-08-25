@@ -10,13 +10,19 @@ public abstract class Entity : MonoBehaviour {
 
     public int currentHP;
     private bool dead = false;
+    protected bool immune = false; //Currently only used for shielding, reserved for other use too
 
     public void Start() {
         this.currentHP = this.maxHP;
     }
 
     public void TakeDamage(int amount) {
+        if (this.immune) {
+            return;
+        }
+
         this.OnDamage(amount);
+
         this.currentHP -= amount;
         if (this.damageFeedback != null) {
             this.damageFeedback.PlayFeedbacks();

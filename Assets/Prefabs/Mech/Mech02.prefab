@@ -379,7 +379,8 @@ MonoBehaviour:
     m_Bits: 8
   shoot: {fileID: 8455007817732209337}
   healthBoostOnDeath: 100
-  shieldRadius: 8.53
+  shieldRadius: 10.2
+  shieldCooldown: 10
 --- !u!95 &813400348708640689
 Animator:
   serializedVersion: 5

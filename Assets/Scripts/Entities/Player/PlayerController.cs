@@ -92,16 +92,16 @@ public class PlayerController : MultipleShooter {
         }
     }
 
-    public void Heal(int amount)
-    {
-        currentHP += amount;
-        Mathf.Clamp(currentHP, 0, maxHP);
+    public void Heal(int amount) {
+        this.currentHP = Mathf.Clamp(this.currentHP + amount, 0, this.maxHP);
+
         float h, s, v;
         Color.RGBToHSV(this.window.color, out h, out s, out v);
         v += hpIncrement * amount;
 
         this.window.color = Color.HSVToRGB(h, s, v);
     }
+
     protected override void OnDie() { //Ignore
     }
 

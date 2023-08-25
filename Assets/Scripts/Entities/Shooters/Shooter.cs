@@ -20,21 +20,22 @@ public abstract class Shooter : Entity {
             return;
         }
 
-        GameObject newObject = null;
-        Debug.Log(this.gameObject.name + " using " + this.weapon.name);
         if (this.weapon.isSpawner) {
-            newObject = Instantiate(this.weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
-            Debug.Log("Spawned " + newObject.name);
-        }
+            GameObject newObject = Instantiate(this.weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
 
-        if (this.weapon.isProjectile) {
-            Projectile projectile = newObject.GetComponent<Projectile>();
-            projectile.Init(this.gameObject.layer, targetPos, this.weapon.useRange, this.weapon.projectileSpeed, this.weapon.damage);
-        }
+            if (this.weapon.isProjectile) {
+                Projectile projectile = newObject.GetComponent<Projectile>();
+                projectile.Init(this.gameObject.layer, targetPos, this.weapon.useRange, this.weapon.projectileSpeed, this.weapon.damage);
+            }
 
-        if (this.weapon.isPathfidner) {
-            AIDestinationSetter path = newObject.GetComponent<AIDestinationSetter>();
-            path.target = this.gameObject.GetComponent<AIDestinationSetter>().target;
+            if (this.weapon.isPathfidner) {
+                AIDestinationSetter path = newObject.GetComponent<AIDestinationSetter>();
+                path.target = this.gameObject.GetComponent<AIDestinationSetter>().target;
+            }
+        } else {
+            if (this.weapon.isPathfidner || this.weapon.isProjectile) {
+                throw new UnityException("Unsupported combination of weapon parameters.");
+            }
         }
 
         StartCoroutine(this.Reload(this.weapon));
