@@ -27,7 +27,7 @@ public class PlayerController : MultipleShooter {
 
         float h, s, v;
         Color.RGBToHSV(this.window.color, out h, out s, out v);
-        this.hpIncrement = v / base.maxHP ;
+        this.hpIncrement = v / base.maxHP;
     }
 
     private void FixedUpdate() {
@@ -55,7 +55,7 @@ public class PlayerController : MultipleShooter {
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2)) {
             base.SwitchWeapons(1);
         }
-        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0) {
+        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0) { //This'll have to change if we add more weapons
             if (base.GetWeapon() == 0) {
                 SwitchWeapons(1);
             } else {

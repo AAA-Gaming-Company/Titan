@@ -19,15 +19,15 @@ public class EnemyController : Shooter {
     public new void Start() {
         base.Start();
 
-        destinationSetter = GetComponent<AIDestinationSetter>();
-        aiPath = GetComponent<AIPath>();
-        player = destinationSetter.target.GetComponent<PlayerController>();
+        this.destinationSetter = GetComponent<AIDestinationSetter>();
+        this.aiPath = GetComponent<AIPath>();
+        this.player = destinationSetter.target.GetComponent<PlayerController>();
     }
 
     private void Update() {
         if (this.isReadyToShoot() && Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.GetShootRange() && this.CanHitPlayer()) {
             this.Shoot(this.destinationSetter.target.position);
-            shoot.PlayFeedbacks();
+            this.shoot.PlayFeedbacks();
         }
 
         if (Vector2.Distance(base.transform.position, this.destinationSetter.target.position) < this.moveRange) {
@@ -55,7 +55,7 @@ public class EnemyController : Shooter {
     }
 
     protected override void OnDie() {
-        player.Heal(healthBoostOnDeath);
+        this.player.Heal(this.healthBoostOnDeath);
     }
 
     protected override void OnDamage(int amount) {

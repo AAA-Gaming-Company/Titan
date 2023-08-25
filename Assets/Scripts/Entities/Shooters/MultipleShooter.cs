@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class MultipleShooter : Shooter {
     public WeaponType[] weaponTypes;
+    private int currentWeapon;
 
     public new void Start() {
         base.Start();
@@ -17,23 +18,15 @@ public abstract class MultipleShooter : Shooter {
             this.weaponTypes[i].ready = true;
         }
         this.weapon = this.weaponTypes[0];
+        this.currentWeapon = 0;
     }
 
-    public int GetWeapon()
-    {
-        for (int i = 0; i < this.weaponTypes.Length; i++)
-        {
-            //If we find the index return the current index
-            if (this.weaponTypes[i] == this.weapon)
-            {
-                return i;
-            }
-        }
-        //Nothing found. Return a negative number
-        return -1;
+    public int GetWeapon() {
+        return this.currentWeapon;
     }
 
     public void SwitchWeapons(int id) {
+        this.currentWeapon = id;
         this.weapon = this.weaponTypes[id];
     }
 }

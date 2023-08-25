@@ -14,6 +14,7 @@ public abstract class Entity : MonoBehaviour {
 
     public void Start() {
         this.currentHP = this.maxHP;
+        this.immune = false;
     }
 
     public void TakeDamage(int amount) {

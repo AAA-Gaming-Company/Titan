@@ -52,7 +52,6 @@ public abstract class Projectile : MonoBehaviour {
 
         foreach (Collider2D c in hit) {
             if (c != null) {
-
                 if (c.gameObject.layer != this.ignoreLayer) {
                     Entity entity = c.GetComponent<Entity>();
                     if (entity != null) {
@@ -70,7 +69,6 @@ public abstract class Projectile : MonoBehaviour {
 
         //If we've got to the final position, then destroy
         if (base.transform.position.x == this.finalPosition.x && base.transform.position.y == this.finalPosition.y) {
-
             Destroy(base.gameObject);
         }
     }
