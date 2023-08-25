@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDelay: 15
   useRange: 15
-  isSpawner: 0
+  isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: f886d1c567ef8a340ae2f49873c1ff6d, type: 3}
   amount: 01000000
   isProjectile: 1

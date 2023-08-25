@@ -13,7 +13,7 @@ public class BoidGroup : MonoBehaviour {
     public BoidSettings settings;
     public ComputeShader compute;
 
-    public Boid[] boids = null;
+    private Boid[] boids = null;
 
     private void Start() {
         if (this.autoSpawn) {
@@ -44,21 +44,15 @@ public class BoidGroup : MonoBehaviour {
         }
     }
 
-    public static BoidGroup GetGroup()
-    {
-        return currentGroup;
-    }
-    public IEnumerator TemporaryTargetChange(float duration, Transform newTarget)
-    {
-        foreach (Boid boid in boids)
-        {
-            Transform oldTarget = target;
-            UpdateTarget(newTarget);
-            yield return new WaitForSeconds(duration);
-            UpdateTarget(oldTarget);
-        }
+    public IEnumerator TemporaryTargetChange(float duration, Transform newTarget) {
+        Transform oldTarget = this.target;
+        this.UpdateTarget(newTarget);
 
+        yield return new WaitForSeconds(duration);
+
+        this.UpdateTarget(oldTarget);
     }
+
     private void Update() {
         if (this.boids == null) {
             return;
@@ -102,6 +96,11 @@ public class BoidGroup : MonoBehaviour {
             Destroy(this.boids[i]);
         }
         this.boids = null;
+
+        if (BoidGroup.currentGroup == this) {
+            BoidGroup.currentGroup = null;
+        }
+
         Destroy(base.gameObject);
     }
 
@@ -110,6 +109,10 @@ public class BoidGroup : MonoBehaviour {
             this.boids[i].UpdateTarget(target);
         }
         this.target = target;
+    }
+
+    public static BoidGroup GetGroup() {
+        return BoidGroup.currentGroup;
     }
 
     public struct BoidData {

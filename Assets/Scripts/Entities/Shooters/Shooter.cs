@@ -16,11 +16,9 @@ public abstract class Shooter : Entity {
     }
 
     public bool Shoot(Vector2 targetPos , WeaponType weapon) {
-        if (weapon == null)
-        {
+        if (weapon == null) {
             weapon = this.weapon;
         }
-        
         if (!weapon.ready) {
             return false;
         }
@@ -49,13 +47,13 @@ public abstract class Shooter : Entity {
                 throw new UnityException("Unsupported combination of weapon parameters.");
             }
         }
-        return true;
+
         StartCoroutine(this.Reload(weapon));
+        return true;
     }
 
-    public void Shoot(Vector2 targetPos)
-    {
-        Shoot(targetPos, this.weapon);
+    public void Shoot(Vector2 targetPos) {
+        this.Shoot(targetPos, this.weapon);
     }
 
     public bool isReadyToShoot() {

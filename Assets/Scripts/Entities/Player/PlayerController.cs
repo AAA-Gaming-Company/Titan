@@ -42,15 +42,10 @@ public class PlayerController : MultipleShooter {
 
         //Weapon use
         if (Input.GetMouseButton(0)) {
-            this.Hit();
-            //Probably should also rotate the player if they click in a
-            // different direction to that in which they are going.
+            this.Hit(null);
         }
-        if (Input.GetMouseButton(1))
-        {
+        if (Input.GetMouseButton(1)) {
             this.Hit(base.weaponTypes[2]);
-            //Probably should also rotate the player if they click in a
-            // different direction to that in which they are going.
         }
 
         //Weapon switching
@@ -60,13 +55,10 @@ public class PlayerController : MultipleShooter {
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2)) {
             base.SwitchWeapons(1);
         }
-        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
-        {
-            if (base.GetWeapon() == 0)
-            {
+        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0) {
+            if (base.GetWeapon() == 0) {
                 SwitchWeapons(1);
-            }else
-            {
+            } else {
                 SwitchWeapons(0);
             }
         }
@@ -105,11 +97,6 @@ public class PlayerController : MultipleShooter {
         if (this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition), weapon)) {
             this.shootFeedback.PlayFeedbacks();
         }
-    }
-
-    private void Hit()
-    {
-        Hit(null);
     }
 
     public void Heal(int amount) {
