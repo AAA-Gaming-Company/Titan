@@ -11,6 +11,7 @@ public class PlayerController : MultipleShooter {
     public MMF_Player shootFeedback;
     public SpriteRenderer window;
     public GameObject deathScreen;
+    public ProgressBar healthBar;
 
     private Rigidbody2D rb;
 
@@ -41,6 +42,7 @@ public class PlayerController : MultipleShooter {
     }
 
     private void Update() {
+        this.UpdateHealthDisplay();
         this.UpdatePlayerSprite();
 
         //Weapon use
@@ -123,5 +125,10 @@ public class PlayerController : MultipleShooter {
         v -= hpIncrement * amount;
 
         this.window.color = Color.HSVToRGB(h, s, v);
+    }
+
+    private void UpdateHealthDisplay() {
+        this.healthBar.max = this.maxHP;
+        this.healthBar.UpdateValue(this.currentHP);
     }
 }

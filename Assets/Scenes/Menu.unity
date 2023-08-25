@@ -2270,8 +2270,8 @@ MonoBehaviour:
   m_text: "This stellar masterpiece was crafted by none other than the illustrious
     AAA Gaming Company.\n\n\nOur team:\n - ShardOfKyran - Graphics designer & Sr.
     Supervisor\n - ImDaBigBoss - Music & Raw coding\n - CarlitoChicken - Game engine
-    wrangling\n\nAcknowledgements:\n - Sebastian Lague: Basis for the boids script\n-
-    More Mountains: Feel v3.13 library\n - A* Pathfinding Project\n\n\nThis game
+    wrangling\n\nAcknowledgements:\n - Sebastian Lague: Basis for the boids script\n
+    - More Mountains: Feel v3.13 library\n - A* Pathfinding Project\n\n\nThis game
     and its assets are the intellectual property of the AAA Gaming Company. In the
     future, the source code to this project might be distributed on our GitHub, but
     until then redistribution and/or modification is forbidden and this license applies.\n\nTHE
@@ -4065,7 +4065,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 10
   m_Viewport: {fileID: 1355985282}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 699831946}
