@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a08dc5f763443ddb7d6381f831738f, type: 3}
+  m_Name: FishFriends
+  m_EditorClassIdentifier: 
+  lines:
+  - {fileID: 11400000, guid: 9941227cffbb14f278a59bdcbaf3feeb, type: 2}
+  - {fileID: 11400000, guid: 612c23dc8b43e4b8cb82c785c177f1c0, type: 2}
+  - {fileID: 11400000, guid: a80482f0a9073448d92d8130d2e18be2, type: 2}
