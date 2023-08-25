@@ -10,6 +10,7 @@ public class PlayerController : MultipleShooter {
     public MMF_Player moveFeedback;
     public MMF_Player shootFeedback;
     public SpriteRenderer window;
+    public GameObject deathScreen;
 
     private Rigidbody2D rb;
 
@@ -21,6 +22,8 @@ public class PlayerController : MultipleShooter {
 
     public new void Start() {
         base.Start();
+
+        this.deathScreen.SetActive(false);
 
         this.rb = GetComponent<Rigidbody2D>();
         this.cam = Camera.main;
@@ -109,7 +112,9 @@ public class PlayerController : MultipleShooter {
         this.window.color = Color.HSVToRGB(h, s, v);
     }
 
-    protected override void OnDie() { //Ignore
+    protected override void OnDie() {
+        this.deathScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     protected override void OnDamage(int amount) {
