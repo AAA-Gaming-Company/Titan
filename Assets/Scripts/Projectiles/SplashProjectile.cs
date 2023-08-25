@@ -6,10 +6,10 @@ public class SplashProjectile : Projectile {
     public float range;
     public LayerMask layerMask;
 
-    public override void HitFunction() {
-        Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, range, layerMask);
+    public override void HitFunction(GameObject hit) {
+        Collider2D[] hitCollider = Physics2D.OverlapCircleAll(transform.position, range, layerMask);
 
-        foreach (Collider2D collider in hit) {
+        foreach (Collider2D collider in hitCollider) {
             collider.GetComponent<Entity>().TakeDamage(base.damageDealt);
         }
     }

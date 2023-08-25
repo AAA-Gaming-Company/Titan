@@ -46,6 +46,12 @@ public class PlayerController : MultipleShooter {
             //Probably should also rotate the player if they click in a
             // different direction to that in which they are going.
         }
+        if (Input.GetMouseButton(1))
+        {
+            this.Hit(base.weaponTypes[2]);
+            //Probably should also rotate the player if they click in a
+            // different direction to that in which they are going.
+        }
 
         //Weapon switching
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) {
@@ -53,6 +59,16 @@ public class PlayerController : MultipleShooter {
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2)) {
             base.SwitchWeapons(1);
+        }
+        if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
+        {
+            if (base.GetWeapon() == 0)
+            {
+                SwitchWeapons(1);
+            }else
+            {
+                SwitchWeapons(0);
+            }
         }
 
         //Play and pause engine depending on if the player is moving.
@@ -85,11 +101,15 @@ public class PlayerController : MultipleShooter {
         this.spotLight.transform.rotation = Quaternion.Euler(0, 0, upDown - (90 * localScale.x));
     }
 
-    private void Hit() {
-        if (base.isReadyToShoot()) {
+    private void Hit(WeaponType weapon) {
+        if (this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition), weapon)) {
             this.shootFeedback.PlayFeedbacks();
-            this.Shoot(this.cam.ScreenToWorldPoint(Input.mousePosition));
         }
+    }
+
+    private void Hit()
+    {
+        Hit(null);
     }
 
     public void Heal(int amount) {
@@ -98,7 +118,7 @@ public class PlayerController : MultipleShooter {
         float h, s, v;
         Color.RGBToHSV(this.window.color, out h, out s, out v);
         v += hpIncrement * amount;
-
+        v = Mathf.Clamp(v, 0, hpIncrement * maxHP);
         this.window.color = Color.HSVToRGB(h, s, v);
     }
 

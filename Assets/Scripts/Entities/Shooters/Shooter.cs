@@ -15,37 +15,47 @@ public abstract class Shooter : Entity {
         this.weapon.ready = true;
     }
 
-    public void Shoot(Vector2 targetPos) {
-        if (!this.weapon.ready) {
-            return;
+    public bool Shoot(Vector2 targetPos , WeaponType weapon) {
+        if (weapon == null)
+        {
+            weapon = this.weapon;
+        }
+        
+        if (!weapon.ready) {
+            return false;
         }
 
-        if (this.weapon.isSpawner) {
-            int amount = this.weapon.amount[0];
-            if (this.weapon.amount.Length > 1) {
-                amount = this.weapon.amount[GameManager.difficultyLevel];
+        if (weapon.isSpawner) {
+            int amount = weapon.amount[0];
+            if (weapon.amount.Length > 1) {
+                amount = weapon.amount[GameManager.difficultyLevel];
             }
 
             for (int i = 0; i < amount; i++) {
-                GameObject newObject = Instantiate(this.weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
+                GameObject newObject = Instantiate(weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
 
-                if (this.weapon.isProjectile) {
+                if (weapon.isProjectile) {
                     Projectile projectile = newObject.GetComponent<Projectile>();
-                    projectile.Init(this.gameObject.layer, targetPos, this.weapon.useRange, this.weapon.projectileSpeed, this.weapon.damage);
+                    projectile.Init(this.gameObject.layer, targetPos, weapon.useRange, weapon.projectileSpeed, weapon.damage);
                 }
 
-                if (this.weapon.isPathfidner) {
+                if (weapon.isPathfidner) {
                     AIDestinationSetter path = newObject.GetComponent<AIDestinationSetter>();
                     path.target = this.gameObject.GetComponent<AIDestinationSetter>().target;
                 }
             }
         } else {
-            if (this.weapon.isPathfidner || this.weapon.isProjectile) {
+            if (weapon.isPathfidner || weapon.isProjectile) {
                 throw new UnityException("Unsupported combination of weapon parameters.");
             }
         }
+        return true;
+        StartCoroutine(this.Reload(weapon));
+    }
 
-        StartCoroutine(this.Reload(this.weapon));
+    public void Shoot(Vector2 targetPos)
+    {
+        Shoot(targetPos, this.weapon);
     }
 
     public bool isReadyToShoot() {

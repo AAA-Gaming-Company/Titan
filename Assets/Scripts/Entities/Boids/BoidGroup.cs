@@ -1,6 +1,9 @@
 using UnityEngine;
+using System.Collections;
 
 public class BoidGroup : MonoBehaviour {
+    private static BoidGroup currentGroup = null;
+    
     public int flockSize = 10;
     public bool autoSpawn = true;
     public GameObject boidPrefab;
@@ -10,7 +13,7 @@ public class BoidGroup : MonoBehaviour {
     public BoidSettings settings;
     public ComputeShader compute;
 
-    private Boid[] boids = null;
+    public Boid[] boids = null;
 
     private void Start() {
         if (this.autoSpawn) {
@@ -36,9 +39,26 @@ public class BoidGroup : MonoBehaviour {
 
             BoidSkin boidSkin = this.skinPool[Random.Range(0, this.skinPool.Length)];
             boid.Init(this.settings, this.target, boidSkin);
+
+            BoidGroup.currentGroup = this;
         }
     }
 
+    public static BoidGroup GetGroup()
+    {
+        return currentGroup;
+    }
+    public IEnumerator TemporaryTargetChange(float duration, Transform newTarget)
+    {
+        foreach (Boid boid in boids)
+        {
+            Transform oldTarget = target;
+            UpdateTarget(newTarget);
+            yield return new WaitForSeconds(duration);
+            UpdateTarget(oldTarget);
+        }
+
+    }
     private void Update() {
         if (this.boids == null) {
             return;

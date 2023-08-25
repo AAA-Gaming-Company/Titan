@@ -56,13 +56,13 @@ public abstract class Projectile : MonoBehaviour {
                 if (c.gameObject.layer != this.ignoreLayer) {
                     Entity entity = c.GetComponent<Entity>();
                     if (entity != null) {
-                        this.HitFunction();
+                        this.HitFunction(c.gameObject);
                         entity.TakeDamage(this.damageDealt);
                         Destroy(base.gameObject);
                         return;
                     }
                 } else if (c.gameObject.layer == Projectile.wallLayer) {
-                    this.HitFunction();
+                    this.HitFunction(null);
                     Destroy(base.gameObject);
                 }
             }
@@ -75,5 +75,5 @@ public abstract class Projectile : MonoBehaviour {
         }
     }
 
-    public abstract void HitFunction();
+    public abstract void HitFunction(GameObject hit);
 }

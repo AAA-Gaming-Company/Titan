@@ -4,10 +4,12 @@ using UnityEngine;
 public class MegaMech : EnemyController {
     [Header("Mega Mech")]
     public float shieldRadius;
-    public int shieldCooldown;
+    public int shieldDuration;
+    public float stunDuration;
     public Sprite shield;
 
     private SpriteRenderer shieldRenderer;
+    private bool stunned = false;
 
     public new void Start() {
         base.Start();
@@ -31,7 +33,7 @@ public class MegaMech : EnemyController {
     }
 
     public void DeployShield() {
-        if (this.immune) {
+        if (this.immune || this.stunned) {
             return;
         }
         this.immune = true;
@@ -49,8 +51,21 @@ public class MegaMech : EnemyController {
     }
 
     private IEnumerator ShieldCooldown() {
-        yield return new WaitForSeconds(this.shieldCooldown);
+        yield return new WaitForSeconds(this.shieldDuration);
         this.RetractShield();
+    }
+
+    private IEnumerator Stun()
+    {
+        RetractShield();
+        stunned = true;
+        yield return new WaitForSeconds(stunDuration);
+        stunned = false;
+    }
+    protected override void OnDamage(int amount)
+    {
+        base.OnDamage(amount); //In this case I think it's redundant, but whatever
+        StartCoroutine(Stun());
     }
 
     [RequireComponent(typeof(Collider2D))]
