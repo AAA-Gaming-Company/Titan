@@ -5,6 +5,9 @@ public class MegaMech : EnemyController {
     [Header("Mega Mech")]
     public float shieldRadius;
     public int shieldCooldown;
+    public Sprite shield;
+
+    private SpriteRenderer shieldRenderer;
 
     public new void Start() {
         base.Start();
@@ -17,10 +20,14 @@ public class MegaMech : EnemyController {
 
         CircleCollider2D collier = shield.AddComponent<CircleCollider2D>();
         collier.isTrigger = true;
-        collier.radius = this.shieldRadius;
+        collier.radius = this.shieldRadius / 2f;
 
         MegaMechCollider checker = shield.AddComponent<MegaMechCollider>();
         checker.megaMech = this;
+
+        SpriteRenderer spriteRenderer = shield.AddComponent<SpriteRenderer>();
+        spriteRenderer.sprite = null;
+        this.shieldRenderer = spriteRenderer;
     }
 
     public void DeployShield() {
@@ -28,10 +35,9 @@ public class MegaMech : EnemyController {
             return;
         }
         this.immune = true;
+        this.shieldRenderer.sprite = this.shield;
 
         StartCoroutine(this.ShieldCooldown());
-
-        Debug.Log("Deployed");
     }
 
     public void RetractShield() {
@@ -39,19 +45,12 @@ public class MegaMech : EnemyController {
             return;
         }
         this.immune = false;
-
-        Debug.Log("Retracted");
+        this.shieldRenderer.sprite = null;
     }
 
     private IEnumerator ShieldCooldown() {
         yield return new WaitForSeconds(this.shieldCooldown);
         this.RetractShield();
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(this.transform.position, this.shieldRadius);
     }
 
     [RequireComponent(typeof(Collider2D))]
