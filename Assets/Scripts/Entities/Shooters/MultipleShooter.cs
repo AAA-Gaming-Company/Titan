@@ -2,6 +2,8 @@ using UnityEngine;
 
 public abstract class MultipleShooter : Shooter {
     public WeaponType[] weaponTypes;
+    public BulletDisplay bulletDisplay;
+
     private int currentWeapon;
 
     public new void Start() {
@@ -17,8 +19,8 @@ public abstract class MultipleShooter : Shooter {
             this.weaponTypes[i] = Instantiate(genericInstances[i]);
             this.weaponTypes[i].ready = true;
         }
-        this.weapon = this.weaponTypes[0];
-        this.currentWeapon = 0;
+
+        this.SwitchWeapons(0);
     }
 
     public int GetWeapon() {
@@ -28,5 +30,9 @@ public abstract class MultipleShooter : Shooter {
     public void SwitchWeapons(int id) {
         this.currentWeapon = id;
         this.weapon = this.weaponTypes[id];
+
+        if (this.bulletDisplay && this.weapon.isSpawner) {
+            this.bulletDisplay.UpdateBullet(this.weapon.prefab);
+        }
     }
 }

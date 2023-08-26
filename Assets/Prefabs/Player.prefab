@@ -5745,6 +5745,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1ce6812d94b5934cb0a0b61209d1002, type: 2}
   - {fileID: 11400000, guid: ea9fa78234fd4694081b975a91fa1f16, type: 2}
   - {fileID: 11400000, guid: 5dc65289284d5764bacc66c6a000d55d, type: 2}
+  bulletDisplay: {fileID: 0}
   playerSpeed: 10
   spotLight: {fileID: 1147709301361158736}
   moveFeedback: {fileID: 1147709299948475870}
