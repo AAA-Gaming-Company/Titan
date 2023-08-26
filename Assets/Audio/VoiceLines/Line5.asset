@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: cadf5dc658d6e4e468840499e5f44d91, type: 3}
   transcription: Command, all the fish here seem to be glowing and unnaturally friendly.
-  displayTime: 4.2
+  displayTime: 3.99

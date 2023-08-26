@@ -11,6 +11,7 @@ public class EnemyController : Shooter {
     public LayerMask playerLayer;
     public MMF_Player shoot;
     public int healthBoostOnDeath;
+    public VoiceCommand deathLine;
 
     private AIDestinationSetter destinationSetter;
     private AIPath aiPath;
@@ -55,7 +56,11 @@ public class EnemyController : Shooter {
     }
 
     protected override void OnDie() {
-        this.player.Heal(this.healthBoostOnDeath);    
+        this.player.Heal(this.healthBoostOnDeath);
+
+        if (deathLine != null) {
+            VoiceManager.Instance.SendCommand(deathLine);
+        }
     }
 
     protected override void OnDamage(int amount) {

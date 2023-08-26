@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 14362fa3ec0e4a744a085aaeaf50a302, type: 3}
   transcription: Command, the fish in these caves are glowing and seem to be friendly.
-  displayTime: 3.7
+  displayTime: 3.52

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e75fe222b88e468a938f1e452080ccf, type: 3}
   m_Name: Line18
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  transcription: 
-  displayTime: 0
+  clip: {fileID: 8300000, guid: e9ae04da48de59c41ac388844a897bd3, type: 3}
+  transcription: Well done Gamma-6! You completed your mission! Please head back
+    to base, you can take your time and enjoy the scenery.
+  displayTime: 5.64
