@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
   m_Name: Rocket
   m_EditorClassIdentifier: 
-  useDelay: 3
+  useDelay:
+  - 2
+  - 2
+  - 2
+  - 3
   useRange: 20
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: b43934faf8169c745a61d869b5ec42a6, type: 3}
+  amount: 01000000
   isProjectile: 1
   projectileSpeed: 0.2
-  shootRange: 20
-  damage: 20
+  damage: 14000000
   isPathfidner: 0
   ready: 1

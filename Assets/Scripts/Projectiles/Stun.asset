@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
   m_Name: Stun
   m_EditorClassIdentifier: 
-  useDelay: 15
+  useDelay:
+  - 8
+  - 10
+  - 15
+  - 15
   useRange: 15
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: f886d1c567ef8a340ae2f49873c1ff6d, type: 3}
   amount: 01000000
   isProjectile: 1
   projectileSpeed: 0.5
-  damage: 10
+  damage: 0a000000
   isPathfidner: 0
   ready: 0

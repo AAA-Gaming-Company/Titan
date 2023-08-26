@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
   m_Name: TinyMech
   m_EditorClassIdentifier: 
-  useDelay: 1
+  useDelay:
+  - 2
+  - 1
+  - 1
+  - 1
   useRange: 4
   isSpawner: 1
   prefab: {fileID: 2436504766794875610, guid: 91dc96aeb993842bb96471fd3b4ffc66, type: 3}
+  amount: 01000000
   isProjectile: 1
   projectileSpeed: 0.5
-  shootRange: 4
-  damage: 6
+  damage: 04000000040000000400000006000000
   isPathfidner: 0
   ready: 1

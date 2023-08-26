@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b742c2bd4bb8543a7408d7610b4114, type: 3}
   m_Name: Boss
   m_EditorClassIdentifier: 
-  useDelay: 20
+  useDelay:
+  - 20
   useRange: 70
   isSpawner: 1
   prefab: {fileID: 11065446854282050, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
   amount: 060000000c0000001800000030000000
   isProjectile: 0
   projectileSpeed: 0
-  damage: 0
+  damage: 
   isPathfidner: 1
   ready: 1

@@ -29,12 +29,17 @@ public abstract class Shooter : Entity {
                 amount = weapon.amount[GameManager.difficultyLevel];
             }
 
+            int damage = weapon.damage[0];
+            if (weapon.damage.Length > 1) {
+                damage = weapon.damage[GameManager.difficultyLevel];
+            }
+
             for (int i = 0; i < amount; i++) {
                 GameObject newObject = Instantiate(weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);
 
                 if (weapon.isProjectile) {
                     Projectile projectile = newObject.GetComponent<Projectile>();
-                    projectile.Init(this.gameObject.layer, targetPos, weapon.useRange, weapon.projectileSpeed, weapon.damage);
+                    projectile.Init(this.gameObject.layer, targetPos, weapon.useRange, weapon.projectileSpeed, damage);
                 }
 
                 if (weapon.isPathfidner) {
@@ -66,7 +71,13 @@ public abstract class Shooter : Entity {
 
     private IEnumerator Reload(WeaponType weapon) {
         weapon.ready = false;
-        yield return new WaitForSeconds(weapon.useDelay);
+
+        float delay = weapon.useDelay[0];
+        if (weapon.useDelay.Length > 1) {
+            delay = weapon.useDelay[GameManager.difficultyLevel];
+        }
+
+        yield return new WaitForSeconds(delay);
         weapon.ready = true;
     }
 }
