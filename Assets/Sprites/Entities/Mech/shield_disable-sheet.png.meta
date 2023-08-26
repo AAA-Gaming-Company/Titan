@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: shield_disable-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 158
+        width: 408
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1266dd6188f794c9cc2443ec630857
+      internalID: -1335251045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 92
+        width: 440
+        height: 478
+      alignment: 9
+      pivot: {x: 0.46403143, y: 0.466891}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b792b074e3c09b943b1f0fe66ef559fa
+      internalID: 863196992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 44
+        width: 510
+        height: 551
+      alignment: 9
+      pivot: {x: 0.45034945, y: 0.49999994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1bf8ea64684bc74d871190e167d2959
+      internalID: 513477167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 0
+        width: 443
+        height: 611
+      alignment: 9
+      pivot: {x: 0.44998506, y: 0.51036066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac35f9f3faa2cf646bcea578f301c0f3
+      internalID: -528844148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 48
+        width: 316
+        height: 554
+      alignment: 9
+      pivot: {x: 0.419867, y: 0.48857316}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466b984183f61ff4bae213ec739eab49
+      internalID: 1530023708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 51
+        width: 370
+        height: 570
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fbdbcf04c3a3e47a4bb5e5912dff1e
+      internalID: -2022566588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 73
+        width: 364
+        height: 551
+      alignment: 9
+      pivot: {x: 0.44782567, y: 0.4942554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b935fc3e0d00240a0e0a20fc168379
+      internalID: 1684971958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3336
+        y: 101
+        width: 342
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7ef4ed1beddfb408e2e431391802aa
+      internalID: -1791080231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 3719
+        y: 73
+        width: 370
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ece9cb16add9b4f9c6c0a005cd3b72
+      internalID: 2105689759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_disable-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 4118
+        y: 70
+        width: 203
+        height: 557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726faed558a158b408eac4838380b921
+      internalID: 431845654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +336,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shield_disable-sheet_0: -1335251045
+      shield_disable-sheet_1: 863196992
+      shield_disable-sheet_2: 513477167
+      shield_disable-sheet_3: -528844148
+      shield_disable-sheet_4: 1530023708
+      shield_disable-sheet_5: -2022566588
+      shield_disable-sheet_6: 1684971958
+      shield_disable-sheet_7: -1791080231
+      shield_disable-sheet_8: 2105689759
+      shield_disable-sheet_9: 431845654
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

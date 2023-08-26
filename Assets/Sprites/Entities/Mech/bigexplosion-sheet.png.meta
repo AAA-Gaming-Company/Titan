@@ -42,9 +42,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -115,7 +115,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bigexplosion-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 156
+        width: 460
+        height: 494
+      alignment: 9
+      pivot: {x: 0.5476736, y: 0.49999994}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e704f7be9ebc1e14c86b9e2bb1087445
+      internalID: 1296404888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigexplosion-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 50
+        width: 742
+        height: 684
+      alignment: 9
+      pivot: {x: 0.470445, y: 0.50534344}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28e73718eb1f9e469bfa58b39626578
+      internalID: 2141283927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigexplosion-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 21
+        width: 837
+        height: 717
+      alignment: 9
+      pivot: {x: 0.49563318, y: 0.4541217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd58a9938b2fa74f8429971ca7d0dd1
+      internalID: -1335843298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigexplosion-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2529
+        y: 47
+        width: 665
+        height: 703
+      alignment: 9
+      pivot: {x: 0.5054959, y: 0.4428098}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc221385282c614abe0eb01050b919b
+      internalID: 437874653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigexplosion-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 29
+        width: 702
+        height: 709
+      alignment: 9
+      pivot: {x: 0.46355417, y: 0.4690693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f193072da9fb145824b9b68ffd9832
+      internalID: -1635952098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigexplosion-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 3977
+        y: 50
+        width: 562
+        height: 691
+      alignment: 9
+      pivot: {x: 0.42846158, y: 0.51057875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1091551901594d9438f3ec2ac9544204
+      internalID: -1626156754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigexplosion-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 4569
+        y: 43
+        width: 424
+        height: 691
+      alignment: 9
+      pivot: {x: 0.5172396, y: 0.55289376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6c81c80468742429789e1462fb3efa
+      internalID: -1072986719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +273,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bigexplosion-sheet_0: 1296404888
+      bigexplosion-sheet_1: 2141283927
+      bigexplosion-sheet_2: -1335843298
+      bigexplosion-sheet_3: 437874653
+      bigexplosion-sheet_4: -1635952098
+      bigexplosion-sheet_5: -1626156754
+      bigexplosion-sheet_6: -1072986719
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

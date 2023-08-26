@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using MoreMountains.Feedbacks;
 
 public class MegaMech : EnemyController {
     [Header("Mega Mech")]
@@ -7,6 +8,7 @@ public class MegaMech : EnemyController {
     public int shieldDuration;
     public float stunDuration;
     public Sprite shield;
+    public MMF_Player shieldFeedbacks;
 
     private SpriteRenderer shieldRenderer;
     private bool stunned = false;
@@ -61,7 +63,7 @@ public class MegaMech : EnemyController {
         if (this.stunned) {
             return;
         }
-
+        shieldFeedbacks.PlayFeedbacks();
         this.stunned = true;
         this.RetractShield();
         StartCoroutine(this.StunCooldown());
