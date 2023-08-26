@@ -31,7 +31,7 @@ public abstract class MultipleShooter : Shooter {
         this.currentWeapon = id;
         this.weapon = this.weaponTypes[id];
 
-        if (this.bulletDisplay && this.weapon.isSpawner) {
+        if (this.bulletDisplay != null && this.weapon.isSpawner) {
             this.bulletDisplay.UpdateBullet(this.weapon.prefab);
         }
     }
