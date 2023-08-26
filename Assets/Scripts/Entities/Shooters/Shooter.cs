@@ -29,10 +29,19 @@ public abstract class Shooter : Entity {
                 amount = weapon.amount[GameManager.difficultyLevel];
             }
 
-            int damage = weapon.damage[0];
-            if (weapon.damage.Length > 1) {
-                damage = weapon.damage[GameManager.difficultyLevel];
+
+            int damage = 0;
+            if (weapon.isProjectile)
+            {
+                if (weapon.damage.Length > 1)
+                {
+                    damage = weapon.damage[GameManager.difficultyLevel];
+                }else
+                {
+                    damage = weapon.damage[0];
+                }
             }
+
 
             for (int i = 0; i < amount; i++) {
                 GameObject newObject = Instantiate(weapon.prefab.gameObject, this.firePoint.position, Quaternion.identity);

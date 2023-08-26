@@ -55,7 +55,7 @@ public class EnemyController : Shooter {
     }
 
     protected override void OnDie() {
-        this.player.Heal(this.healthBoostOnDeath);
+        this.player.Heal(this.healthBoostOnDeath);    
     }
 
     protected override void OnDamage(int amount) {

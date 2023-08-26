@@ -7,6 +7,7 @@ public class MegaMech : EnemyController {
     public int shieldDuration;
     public float stunDuration;
     public Sprite shield;
+    public VoiceCommand deathLine;
 
     private SpriteRenderer shieldRenderer;
     private bool stunned = false;
@@ -74,6 +75,14 @@ public class MegaMech : EnemyController {
 
     protected new void OnDamage(int amount) {
         base.OnDamage(amount); //In this case I think it's redundant, but whatever
+    }
+    protected new void OnDie()
+    {
+        base.OnDie(); //In this case I think it's redundant, but whatever
+        if (deathLine != null)
+        {
+            VoiceManager.Instance.SendCommand(deathLine);
+        }
     }
 
     [RequireComponent(typeof(Collider2D))]

@@ -21890,15 +21890,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1147709300549078244, guid: 668c62836c6c1a2468c44b64a726bba8, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1147709300549078244, guid: 668c62836c6c1a2468c44b64a726bba8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.15
+      value: 14.5
       objectReference: {fileID: 0}
     - target: {fileID: 1147709300549078244, guid: 668c62836c6c1a2468c44b64a726bba8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 61.64
+      value: -169.5
       objectReference: {fileID: 0}
     - target: {fileID: 1147709300549078244, guid: 668c62836c6c1a2468c44b64a726bba8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22234,7 +22234,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396765904
 GameObject:
@@ -22591,7 +22591,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &441507698
 GameObject:
@@ -22634,6 +22634,8 @@ Transform:
   - {fileID: 1696606867}
   - {fileID: 1331073448}
   - {fileID: 1532658830}
+  - {fileID: 1036371427}
+  - {fileID: 461116620}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22805,6 +22807,87 @@ Transform:
   m_Father: {fileID: 1682553191}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.628}
+--- !u!1 &461116619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461116620}
+  - component: {fileID: 461116622}
+  - component: {fileID: 461116621}
+  m_Layer: 8
+  m_Name: MechSpawn (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461116620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461116619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6, y: -56.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 441507699}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &461116621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461116619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5cc82ef17f04c419fab7509fb4ed0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnTrigger: 1
+  prefab:
+  - {fileID: 11065446854282050, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
+  - {fileID: 11065446854282050, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
+  - {fileID: 11065446854282050, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
+  - {fileID: 11065446854282050, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
+  - {fileID: 11065446854282050, guid: d02a15945bef08d4fa3aae0f72c4a599, type: 3}
+  spawnLocation: {fileID: 1652892854}
+  hasAiDestination: 1
+  aiDestination: {fileID: 1809582940}
+--- !u!61 &461116622
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461116619}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.9627352, y: -17.602879}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.467257, y: 33.71879}
+  m_EdgeRadius: 0
 --- !u!1 &485721028
 GameObject:
   m_ObjectHideFlags: 0
@@ -22959,7 +23042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492708508}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -47.15, y: 61.64, z: -10}
+  m_LocalPosition: {x: 14.5, y: -169.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32375,6 +32458,85 @@ Transform:
   m_Father: {fileID: 763331148}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1036371426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1036371427}
+  - component: {fileID: 1036371429}
+  - component: {fileID: 1036371428}
+  m_Layer: 8
+  m_Name: MechSpawn (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1036371427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036371426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.2, y: -188.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 441507699}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1036371428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036371426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5cc82ef17f04c419fab7509fb4ed0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnTrigger: 1
+  prefab:
+  - {fileID: 3478370355917589972, guid: 420b7514f7a467d4cac0e5a4c5ed7bed, type: 3}
+  - {fileID: 6403719795699428277, guid: f28a03a75840be54cbf8c9bb988dea6e, type: 3}
+  - {fileID: 6403719795699428277, guid: f28a03a75840be54cbf8c9bb988dea6e, type: 3}
+  spawnLocation: {fileID: 1537532824}
+  hasAiDestination: 1
+  aiDestination: {fileID: 1809582940}
+--- !u!61 &1036371429
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036371426}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.9627352, y: -3.8869514}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.467257, y: 6.286934}
+  m_EdgeRadius: 0
 --- !u!1 &1039938566
 GameObject:
   m_ObjectHideFlags: 0
@@ -34588,7 +34750,6 @@ GameObject:
   - component: {fileID: 1331073448}
   - component: {fileID: 1331073450}
   - component: {fileID: 1331073449}
-  - component: {fileID: 1331073451}
   m_Layer: 8
   m_Name: BoidSpawn (3)
   m_TagString: Untagged
@@ -34652,26 +34813,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.467257, y: 6.286934}
   m_EdgeRadius: 0
---- !u!114 &1331073451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331073447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d5cc82ef17f04c419fab7509fb4ed0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyOnTrigger: 1
-  prefab:
-  - {fileID: 3478370355917589972, guid: 420b7514f7a467d4cac0e5a4c5ed7bed, type: 3}
-  - {fileID: 6403719795699428277, guid: f28a03a75840be54cbf8c9bb988dea6e, type: 3}
-  - {fileID: 6403719795699428277, guid: f28a03a75840be54cbf8c9bb988dea6e, type: 3}
-  spawnLocation: {fileID: 1537532824}
-  hasAiDestination: 1
-  aiDestination: {fileID: 1809582940}
 --- !u!1 &1350609058
 GameObject:
   m_ObjectHideFlags: 0
@@ -35634,7 +35775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496859032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.15, y: 61.64, z: -10}
+  m_LocalPosition: {x: 14.5, y: -169.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35760,7 +35901,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532658829
 GameObject:
@@ -36253,6 +36394,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644685431}
   m_CullTransparentMesh: 1
+--- !u!1 &1652892853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1652892854}
+  m_Layer: 0
+  m_Name: MechSpawnLoc (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1652892854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652892853}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.5, y: -66.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1678557250
 GameObject:
   m_ObjectHideFlags: 0
@@ -37237,7 +37409,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807237471
 GameObject:
