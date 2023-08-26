@@ -2,7 +2,8 @@
 public class GameManager {
     public static int difficultyLevel = 2;
     //Levels:
-    // - 0: Noob
-    // - 1: Pro
-    // - 2: Epic
+    // - 0: 3 year old
+    // - 1: Noob
+    // - 2: Pro
+    // - 3: Epic
 }

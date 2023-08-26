@@ -10,6 +10,7 @@ public class MenuScript : MonoBehaviour {
     public Button creditsCloseButton;
     public Button quitButton;
     public ProgressBar loadingBar;
+    public Button yo3Button;
     public Button noobButton;
     public Button proButton;
     public Button epicButton;
@@ -34,6 +35,7 @@ public class MenuScript : MonoBehaviour {
         this.creditsCloseButton.onClick.AddListener(this.ClickCreditsHide);
         this.quitButton.onClick.AddListener(this.ClickQuit);
 
+        this.yo3Button.onClick.AddListener(this.ClickLevel3YO);
         this.noobButton.onClick.AddListener(this.ClickLevelNoob);
         this.proButton.onClick.AddListener(this.ClickLevelPro);
         this.epicButton.onClick.AddListener(this.ClickLevelEpic);
@@ -65,16 +67,20 @@ public class MenuScript : MonoBehaviour {
         Application.Quit();
     }
 
-    private void ClickLevelNoob() {
+    private void ClickLevel3YO() {
         this.ClickLevel(0);
     }
 
-    private void ClickLevelPro() {
+    private void ClickLevelNoob() {
         this.ClickLevel(1);
     }
 
-    private void ClickLevelEpic() {
+    private void ClickLevelPro() {
         this.ClickLevel(2);
+    }
+
+    private void ClickLevelEpic() {
+        this.ClickLevel(3);
     }
 
     public void ClickLevel(int level) {
